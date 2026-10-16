@@ -13273,6 +13273,16 @@ details.recommendation-panel {
   font-size: .86rem;
 }
 
+@media (max-width: 1100px) {
+  .course-hero .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .course-hero .corporate-hero-visual {
+    width: 100%;
+  }
+}
+
 @media (max-width: 520px) {
   .course-meeting-card,
   .camera-policy-card,
