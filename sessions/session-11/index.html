@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Session 11 · LODs &amp; Table Calculations</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="session-11">
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="../../index.html"><img class="brand-mark" src="../../assets/images/master-programme.webp" alt="Master's programme visual identity"><span>ESBS Data Visualisation</span></a>
+      <div class="nav-links"><a href="../../index.html">Home</a><span class="publication-unavailable" aria-disabled="true" title="Coming soon">Workshop 2</span><a aria-current="page" href="index.html">Session 11</a><a href="../session-12/index.html">Next</a></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero session-hero">
+      <div class="hero-inner hero-grid">
+        <div>
+          <p class="eyebrow">Block 3 · Session 11</p>
+          <h1>LODs &amp; Table Calculations</h1>
+          <p>Control where Tableau calculates a metric, then decide whether the answer should remain stable or respond to the structure of the view.</p>
+          <p class="hero-statement">Same data. Same measure. Different calculation level, different answer.</p>
+          <div class="hero-actions"><a class="button" href="#S11-00">Start with the puzzle</a><a class="button secondary" href="#journey">Today's Journey</a></div>
+        </div>
+        <div class="hero-visual s06-hero-map s11-hero-map" aria-label="Session 11 learning path">
+          <article><span>01</span><strong>Locate</strong><p>Row, aggregate, LOD or table calculation?</p></article>
+          <article><span>02</span><strong>Control</strong><p>Use Tableau's order of operations intentionally.</p></article>
+          <article><span>03</span><strong>Stabilise</strong><p>Fix, include or exclude analytical detail.</p></article>
+          <article><span>04</span><strong>Respond</strong><p>Calculate across the marks in the view.</p></article>
+          <article><span>05</span><strong>Configure</strong><p>Set addressing and partitioning correctly.</p></article>
+          <article><span>06</span><strong>Choose</strong><p>Match the calculation type to the question.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <nav class="session-progress-nav" aria-label="Session sections"><a href="#S11-00">Puzzle</a><a href="#S11-01">Levels</a><a href="#S11-02">Order</a><a href="#S11-03">LODs</a><a href="#S11-04">LOD Lab</a><a href="#S11-break">Break</a><a href="#S11-05">Table Calcs</a><a href="#S11-06">Compute Using</a><a href="#S11-07">Lab</a><a href="#S11-08">Close</a></nav>
+
+    <section class="container">
+      <div class="progress-wrap" aria-label="Local progress"><strong data-progress-label>0% complete</strong><progress data-progress max="100" value="0">0%</progress></div>
+      <section id="journey" class="s06-journey">
+        <p class="eyebrow">Today's Journey · 2 hours including guided practice</p>
+        <h2>First control the grain. Then control the view.</h2>
+        <p class="lead">The session separates two ideas students often mix together: LOD expressions define the data granularity; table calculations operate over the marks already visible.</p>
+        <ol class="s06-timeline" aria-label="Session 11 learning roadmap">
+          <li><a href="#S11-00"><span>01</span><strong>Opening puzzle</strong><em>00:00-00:10</em><small>Why does the same formula change?</small></a></li>
+          <li><a href="#S11-01"><span>02</span><strong>Calculation levels</strong><em>00:10-00:25</em><small>Row, aggregate, LOD and table calculation.</small></a></li>
+          <li><a href="#S11-02"><span>03</span><strong>Order of operations</strong><em>00:25-00:35</em><small>Understand when filters act.</small></a></li>
+          <li><a href="#S11-03"><span>04</span><strong>LOD expressions</strong><em>00:35-00:55</em><small>FIXED, INCLUDE and EXCLUDE.</small></a></li>
+          <li><a href="#S11-04"><span>05</span><strong>LOD lab</strong><em>00:55-01:15</em><small>Build stable benchmarks.</small></a></li>
+          <li><a href="#S11-break"><span>06</span><strong>Break</strong><em>01:15-01:20</em><small>Five-minute reset.</small></a></li>
+          <li><a href="#S11-05"><span>07</span><strong>Table calculations</strong><em>01:20-01:35</em><small>Calculate over visible marks.</small></a></li>
+          <li><a href="#S11-06"><span>08</span><strong>Compute Using</strong><em>01:35-01:50</em><small>Addressing and partitioning.</small></a></li>
+          <li><a href="#S11-07"><span>09</span><strong>Table-calc lab</strong><em>01:50-02:00</em><small>Running total, change and rank.</small></a></li>
+        </ol>
+      </section>
+    </section>
+
+    <section class="section-band" id="S11-00"><div class="container">
+      <p class="eyebrow">S11-00 · Opening puzzle</p><h2>Why can one “sales” number produce three different answers?</h2>
+      <p class="lead">Imagine a Category view. We want to compare each category with customer lifetime sales and also show its contribution to the visible total.</p>
+      <div class="s11-answer-grid">
+        <article><span>Question A</span><strong>What did this row sell?</strong><p>Calculate on each source row, then aggregate.</p><code>[Profit] / [Sales]</code></article>
+        <article><span>Question B</span><strong>What did this customer sell in total?</strong><p>Choose customer grain even when Customer is not in the view.</p><code>{ FIXED [Customer Name] : SUM([Sales]) }</code></article>
+        <article><span>Question C</span><strong>What share of the visible total is this mark?</strong><p>Calculate over the marks currently drawn.</p><code>SUM([Sales]) / TOTAL(SUM([Sales]))</code></article>
+      </div>
+      <div class="callout-card"><span>Diagnostic habit</span><p>Before writing a formula, finish this sentence: “I need Tableau to calculate at the level of ___.”</p></div>
+      <section class="activity" data-quiz>
+        <h3>Commit before continuing</h3>
+        <p>A chart shows monthly sales. You need a cumulative line that changes when months are filtered out. Where should the calculation live?</p>
+        <div class="quiz-options"><button data-correct="false" data-feedback="A FIXED LOD creates a stable data-grain result; it does not follow the visible sequence of marks.">FIXED LOD</button><button data-correct="false" data-feedback="A row-level calculation cannot know the order of visible months.">Row-level calculation</button><button data-correct="true" data-feedback="Correct. A running total depends on the visible marks and their order, so it is a table calculation.">Table calculation</button></div>
+        <p class="feedback" aria-live="polite"></p>
+      </section>
+    </div></section>
+
+    <section class="container" id="S11-01">
+      <p class="eyebrow">S11-01 · Where calculations live</p><h2>Four calculation levels, four different jobs.</h2>
+      <div class="s11-level-stack">
+        <article><span>1 · Source rows</span><strong>Row-level calculation</strong><p>Evaluated for every record before the view aggregates it.</p><code>[Profit] / [Sales]</code></article>
+        <article><span>2 · Query result</span><strong>Aggregate calculation</strong><p>Evaluated after Tableau groups the rows at the view's level of detail.</p><code>SUM([Profit]) / SUM([Sales])</code></article>
+        <article><span>3 · Declared grain</span><strong>LOD expression</strong><p>Calculates at a grain you define, which may differ from the view.</p><code>{ FIXED [Region] : SUM([Sales]) }</code></article>
+        <article><span>4 · Visible marks</span><strong>Table calculation</strong><p>Runs after the view is built and depends on its layout and partitions.</p><code>RUNNING_SUM(SUM([Sales]))</code></article>
+      </div>
+      <div class="s07-core-contrast"><article><span>Stable question</span><strong>Use an LOD</strong><p>“What is each customer's lifetime sales, regardless of the view?”</p></article><article><span>View-dependent question</span><strong>Use a table calculation</strong><p>“How do visible monthly sales accumulate from left to right?”</p></article></div>
+      <section class="s07-practice-set">
+        <p class="eyebrow">Worked example · why two profit ratios disagree</p>
+        <h3>Ratio of totals is not the same as average of row ratios.</h3>
+        <div class="s11-ratio-example">
+          <table><thead><tr><th>Order line</th><th>Sales</th><th>Profit</th><th>Row ratio</th></tr></thead><tbody><tr><td>A</td><td>€100</td><td>€20</td><td>20%</td></tr><tr><td>B</td><td>€900</td><td>€90</td><td>10%</td></tr></tbody></table>
+          <div><article><span>Average row ratio</span><strong>(20% + 10%) / 2 = 15%</strong><code>AVG([Profit] / [Sales])</code></article><article><span>Ratio of totals</span><strong>€110 / €1,000 = 11%</strong><code>SUM([Profit]) / SUM([Sales])</code></article></div>
+        </div>
+        <p><b>Interpretation:</b> the first gives both order lines equal weight; the second weights them by sales. For overall profit margin, the ratio of totals is normally the meaningful answer.</p>
+      </section>
+      <section class="activity" data-quiz><h3>Micro-check · calculation level</h3><p>Which formula gives overall profit margin at the current view grain?</p><div class="quiz-options"><button data-correct="false" data-feedback="This is a row-level ratio. Tableau must aggregate it later, and the chosen aggregation changes the meaning.">[Profit] / [Sales]</button><button data-correct="true" data-feedback="Correct. Divide aggregated profit by aggregated sales.">SUM([Profit]) / SUM([Sales])</button><button data-correct="false" data-feedback="A running sum answers accumulation over visible marks, not margin.">RUNNING_SUM(SUM([Profit]))</button></div><p class="feedback" aria-live="polite"></p></section>
+    </section>
+
+    <section class="section-band light" id="S11-02"><div class="container">
+      <p class="eyebrow">S11-02 · Simplified order of operations</p><h2>A filter only affects calculations that happen after it.</h2>
+      <div class="s11-order-flow" aria-label="Simplified Tableau order of operations">
+        <article><span>01</span><strong>Extract filters</strong><p>Restrict the extract.</p></article><article><span>02</span><strong>Data source filters</strong><p>Restrict the connected source.</p></article><article class="context"><span>03</span><strong>Context filters</strong><p>Define the working subset.</p></article><article><span>04</span><strong>FIXED LODs</strong><p>Calculate at declared grain.</p></article><article><span>05</span><strong>Dimension filters</strong><p>Remove dimension members.</p></article><article><span>06</span><strong>Measure filters</strong><p>Filter aggregated values.</p></article><article class="table"><span>07</span><strong>Table calculations</strong><p>Operate on remaining marks.</p></article>
+      </div>
+      <div class="s11-filter-demo"><article><span>Normal Category filter</span><strong>The FIXED result stays stable</strong><p>The FIXED expression was evaluated before the dimension filter.</p></article><article><span>Category added to context</span><strong>The FIXED result recalculates</strong><p>The context filter now acts before the FIXED expression.</p></article></div>
+      <p class="source-note">This is a teaching model, not Tableau's complete order-of-operations diagram. It focuses on the filters and calculations used today.</p>
+      <section class="activity" data-quiz><h3>Predict the filter behaviour</h3><p><code>{ FIXED [Customer Name] : SUM([Sales]) }</code> is in the view. You apply a normal Category dimension filter. What happens?</p><div class="quiz-options"><button data-correct="true" data-feedback="Correct. FIXED is evaluated before a normal dimension filter, so the lifetime total usually remains based on all categories.">The FIXED value normally stays unchanged</button><button data-correct="false" data-feedback="That happens after Category is made a context filter, not while it remains a normal dimension filter.">It always recalculates immediately</button><button data-correct="false" data-feedback="FIXED still returns a value; the question is which filtered subset it can see.">It becomes NULL</button></div><p class="feedback" aria-live="polite"></p></section>
+    </div></section>
+
+    <section class="container" id="S11-03">
+      <p class="eyebrow">S11-03 · Level of Detail expressions</p><h2>Declare the grain inside braces.</h2>
+      <pre class="s11-syntax"><code>{ TYPE [Dimension 1], [Dimension 2] : AGG([Measure]) }</code></pre>
+      <div class="s11-lod-grid">
+        <article><span>FIXED</span><strong>Independent of view detail</strong><p>Uses only the dimensions declared in the expression. Best for reusable benchmarks and customer-, order- or region-level KPIs.</p><code>{ FIXED [Customer Name] : SUM([Sales]) }</code></article>
+        <article><span>INCLUDE</span><strong>Add hidden detail</strong><p>Adds a finer dimension to the view's grain, calculates, then aggregates the result back up.</p><code>{ INCLUDE [Sub-Category] : SUM([Sales]) }</code></article>
+        <article><span>EXCLUDE</span><strong>Remove visible detail</strong><p>Calculates at a coarser level by removing a dimension that is present in the view.</p><code>{ EXCLUDE [Sub-Category] : SUM([Profit]) }</code></article>
+      </div>
+      <div class="s11-choice-table"><table><thead><tr><th>If the metric should…</th><th>Choose</th><th>Example</th></tr></thead><tbody><tr><td>stay at a named grain when the view changes</td><td><b>FIXED</b></td><td>Customer lifetime sales</td></tr><tr><td>use more detail than the view displays</td><td><b>INCLUDE</b></td><td>Average sub-category sales by category</td></tr><tr><td>ignore one visible dimension</td><td><b>EXCLUDE</b></td><td>Category profit repeated for each sub-category</td></tr></tbody></table></div>
+      <div class="s11-lod-anatomy">
+        <article><span>Opening brace</span><strong>Start an LOD expression</strong><p>Tableau now expects a scoping keyword, dimensions and an aggregate.</p></article><article><span>Scoping keyword</span><strong>FIXED · INCLUDE · EXCLUDE</strong><p>Defines how the declared dimensions relate to the view.</p></article><article><span>Dimension declaration</span><strong><code>[Customer Name]</code></strong><p>Names the grain to fix, add or remove.</p></article><article><span>Colon + aggregate</span><strong><code>: SUM([Sales])</code></strong><p>States what measure Tableau calculates at that grain.</p></article>
+      </div>
+      <section class="activity" data-quiz><h3>Choose the LOD type</h3><p>The view displays Category and Sub-Category. Every Sub-Category should also show its Category's total profit. Which type best fits?</p><div class="quiz-options"><button data-correct="false" data-feedback="INCLUDE adds detail. Here we need to remove Sub-Category detail from the benchmark.">INCLUDE [Sub-Category]</button><button data-correct="true" data-feedback="Correct. EXCLUDE removes Sub-Category from the calculation while keeping it in the view.">EXCLUDE [Sub-Category]</button><button data-correct="false" data-feedback="A running total depends on order; the question asks for a category-level benchmark.">RUNNING_SUM</button></div><p class="feedback" aria-live="polite"></p></section>
+    </section>
+
+    <section class="section-band light" id="S11-04"><div class="container">
+      <p class="eyebrow">S11-04 · Guided LOD lab</p><h2>Build a stable customer metric, then test what can change it.</h2>
+      <section class="s07-practice-set"><div class="s07-practice-grid">
+        <article class="s07-guided-practice"><span>Task 1 · FIXED</span><h3>Customer Lifetime Sales</h3><ol><li>Create the calculated field below.</li><li>Build a view with Customer Name on Rows and Sales on Columns.</li><li>Add the new field to Tooltip.</li><li>Filter Category to Furniture.</li><li>Convert the filter to Context and compare.</li></ol><pre><code>{ FIXED [Customer Name] : SUM([Sales]) }</code></pre><details><summary>What should you notice?</summary><p>A normal Category dimension filter does not change the FIXED value. A context filter does, because it moves before FIXED in the order of operations.</p></details></article>
+        <article class="s07-guided-practice"><span>Task 2 · segmentation</span><h3>Turn the stable metric into business logic.</h3><pre><code>IF [Customer Lifetime Sales] &gt; 10000 THEN "High-Value"
+ELSEIF [Customer Lifetime Sales] &gt; 5000 THEN "Medium"
+ELSE "Low"
+END</code></pre><p>Place the segment on Rows and <code>COUNTD([Customer Name])</code> on Columns. Explain why the segment should be based on lifetime sales rather than the sales currently visible.</p></article>
+        <article class="s07-guided-practice"><span>Task 3 · EXCLUDE</span><h3>Keep the category benchmark visible.</h3><ol><li>Place Category and Sub-Category on Rows.</li><li>Place Profit on Columns.</li><li>Create and add the calculation below to Tooltip.</li></ol><pre><code>{ EXCLUDE [Sub-Category] : SUM([Profit]) }</code></pre><details><summary>Expected pattern</summary><p>Every sub-category within the same category displays the same category-level benchmark.</p></details></article>
+      </div></section>
+      <section class="s07-practice-set">
+        <p class="eyebrow">Self-guided LOD ladder · complete in order</p><h3>Each level adds one analytical decision.</h3>
+        <div class="s07-practice-grid">
+          <article class="s07-guided-practice"><span>Level 1 · reproduce</span><h4>Regional Sales Benchmark</h4><p><b>Question:</b> what is total sales for the region each state belongs to?</p><details><summary>Reveal calculation</summary><pre><code>{ FIXED [Region] : SUM([Sales]) }</code></pre></details><details><summary>Build checklist</summary><ol><li>State → Rows.</li><li>Sales → Columns.</li><li>Region → Color.</li><li>Regional Sales → Tooltip.</li><li>Confirm states in one region repeat the same benchmark.</li></ol></details></article>
+          <article class="s07-guided-practice"><span>Level 2 · extend</span><h4>State Contribution to Region</h4><p><b>Question:</b> what share of regional sales comes from each state?</p><details><summary>Reveal calculation</summary><pre><code>SUM([Sales]) / MIN([Regional Sales])</code></pre><p>Use an aggregation such as <code>MIN</code> because the LOD value is repeated at state rows and Tableau cannot mix aggregate and non-aggregate terms.</p></details><details><summary>Validation</summary><p>Format as percentage. Within each region, state contributions should add to approximately 100%, allowing for display rounding.</p></details></article>
+          <article class="s07-guided-practice"><span>Level 3 · diagnose</span><h4>Why did the benchmark change?</h4><p>Add Category as a normal filter, then add it to context. Record the regional benchmark before filtering, after normal filtering and after context filtering.</p><details><summary>Explain the result</summary><p>The normal dimension filter acts after FIXED; the context filter acts before it. Context changes the data subset available to the LOD.</p></details></article>
+          <article class="s07-guided-practice"><span>Stretch · design</span><h4>Order Profit Flag</h4><p>Create an order-level profit metric and classify each order as profitable or unprofitable.</p><details><summary>Reveal one solution</summary><pre><code>// Order Profit
+{ FIXED [Order ID] : SUM([Profit]) }
+
+// Order Profit Status
+IF [Order Profit] &gt; 0 THEN "Profitable"
+ELSE "Unprofitable"
+END</code></pre></details><p><b>Explain:</b> why is order grain safer than judging every product line separately?</p></article>
+        </div>
+      </section>
+      <section class="activity" data-quiz><h3>LOD debugging check</h3><p>Tableau reports “Cannot mix aggregate and non-aggregate arguments” for <code>SUM([Sales]) / [Regional Sales]</code>. What is the most direct repair?</p><div class="quiz-options"><button data-correct="true" data-feedback="Correct. Aggregate the repeated LOD value too, for example MIN([Regional Sales]).">Use SUM([Sales]) / MIN([Regional Sales])</button><button data-correct="false" data-feedback="Removing SUM changes the numerator to row level and does not preserve the intended state contribution.">Remove SUM from Sales</button><button data-correct="false" data-feedback="A table calculation does not solve the aggregate/non-aggregate mismatch.">Wrap everything in RUNNING_SUM</button></div><p class="feedback" aria-live="polite"></p></section>
+      <div class="s07-database-note"><span>Dataset for Block 3</span><strong>Official Tableau Sample - Superstore</strong><p>Use this exact file for Sessions 11-14 and Workshop 3 so calculations and expected results remain consistent.</p><div class="hero-actions"><a class="button" href="../../assets/datasets/Sample - Superstore.xls" download>Download Sample Superstore</a></div><div class="s07-open-db-steps"><article><span>Verified structure</span><strong>Orders · People · Returns</strong><p><code>Orders</code> contains 9,994 rows and 21 fields covering 2018-2021.</p></article><article><span>Connect in Tableau</span><strong>Microsoft Excel connector</strong><ol><li>Download the file.</li><li>Open Tableau Public.</li><li>Choose Microsoft Excel.</li><li>Select <code>Sample - Superstore.xls</code>.</li><li>Drag <code>Orders</code> to the data canvas.</li></ol></article></div></div>
+    </div></section>
+
+    <section class="section-band" id="S11-break"><div class="container"><p class="eyebrow">Five-minute reset</p><h2>Stable grain mastered. Next: calculations that deliberately respond to the view.</h2></div></section>
+
+    <section class="container" id="S11-05">
+      <p class="eyebrow">S11-05 · Table calculations</p><h2>Table calculations work on the marks already in the visualisation.</h2><p class="lead">Change the layout, sort order, filters or partition and the result may change. That is not a bug; it is the defining behaviour.</p>
+      <div class="s11-tablecalc-grid">
+        <article><span>Accumulate</span><strong>Running total</strong><code>RUNNING_SUM(SUM([Sales]))</code><p>How much have we accumulated up to this mark?</p></article><article><span>Contribute</span><strong>Percent of total</strong><code>SUM([Sales]) / TOTAL(SUM([Sales]))</code><p>What share of the partition does this mark represent?</p></article><article><span>Compare</span><strong>Difference</strong><code>SUM([Sales]) - LOOKUP(SUM([Sales]), -1)</code><p>How far is this mark from the previous mark?</p></article><article><span>Smooth</span><strong>Moving average</strong><code>WINDOW_AVG(SUM([Sales]), -2, 0)</code><p>What is the average of this mark and the previous two?</p></article><article><span>Position</span><strong>Rank</strong><code>RANK(SUM([Sales]))</code><p>Where does this mark sit inside its partition?</p></article><article><span>Navigate</span><strong>Index</strong><code>INDEX()</code><p>What is the current mark's position in the partition?</p></article>
+      </div>
+      <section class="s07-practice-set"><p class="eyebrow">Function mental models</p><div class="s11-function-strip"><article><code>LOOKUP(expr, -1)</code><strong>Bring back the previous mark</strong><p>Useful for difference and percentage change.</p></article><article><code>WINDOW_AVG(expr, -2, 0)</code><strong>Average a three-mark window</strong><p>Previous two marks plus the current mark.</p></article><article><code>INDEX()</code><strong>Number the current position</strong><p>Useful for first/last mark logic and display control.</p></article><article><code>RANK(expr)</code><strong>Rank within the partition</strong><p>The partition determines where ranking restarts.</p></article></div></section>
+      <section class="activity" data-quiz><h3>Offset micro-check</h3><p>In <code>LOOKUP(SUM([Sales]), -1)</code>, what does <code>-1</code> mean?</p><div class="quiz-options"><button data-correct="false" data-feedback="It is not a negative sales filter.">Keep negative values only</button><button data-correct="true" data-feedback="Correct. It asks for the value one addressed mark before the current mark.">One previous mark in the addressing direction</button><button data-correct="false" data-feedback="Partitions are configured with Compute Using, not by the -1 offset.">Restart once per partition</button></div><p class="feedback" aria-live="polite"></p></section>
+    </section>
+
+    <section class="section-band light" id="S11-06"><div class="container">
+      <p class="eyebrow">S11-06 · Compute Using</p><h2>Every table calculation needs a path and a restart rule.</h2>
+      <div class="s07-core-contrast"><article><span>Addressing</span><strong>Which marks do we move through?</strong><p>The calculation direction: across, down or through selected dimensions.</p></article><article><span>Partitioning</span><strong>Where does the calculation restart?</strong><p>The groups that create separate calculation windows.</p></article></div>
+      <div class="s11-compute-demo">
+        <div><p class="eyebrow">Starting values</p><table><thead><tr><th></th><th>Jan</th><th>Feb</th><th>Mar</th></tr></thead><tbody><tr><th>East</th><td>10</td><td>20</td><td>30</td></tr><tr><th>West</th><td>15</td><td>10</td><td>25</td></tr><tr><th>South</th><td>40</td><td>20</td><td>10</td></tr></tbody></table></div>
+        <div><p class="eyebrow">Running total · Table Across</p><table><thead><tr><th></th><th>Jan</th><th>Feb</th><th>Mar</th></tr></thead><tbody><tr><th>East</th><td>10</td><td>30</td><td>60</td></tr><tr><th>West</th><td>15</td><td>25</td><td>50</td></tr><tr><th>South</th><td>40</td><td>60</td><td>70</td></tr></tbody></table></div>
+        <div><p class="eyebrow">Running total · Table Down</p><table><thead><tr><th></th><th>Jan</th><th>Feb</th><th>Mar</th></tr></thead><tbody><tr><th>East</th><td>10</td><td>20</td><td>30</td></tr><tr><th>West</th><td>25</td><td>30</td><td>55</td></tr><tr><th>South</th><td>65</td><td>50</td><td>65</td></tr></tbody></table></div>
+      </div>
+      <div class="callout-card"><span>Two rules</span><p>Tableau reads in a direction, and the calculation restarts for every partition. If the answer looks wrong, inspect Compute Using before rewriting the formula.</p></div>
+      <div class="s11-debug-sequence"><article><span>1</span><strong>Read the question</strong><p>Should the calculation move through Month, Category, Region or another dimension?</p></article><article><span>2</span><strong>Inspect the layout</strong><p>Which dimensions create rows, columns and panes?</p></article><article><span>3</span><strong>Set addressing</strong><p>Select the dimension the calculation moves through.</p></article><article><span>4</span><strong>Confirm partitions</strong><p>Identify the dimension where the calculation should restart.</p></article><article><span>5</span><strong>Test one small slice</strong><p>Manually calculate three marks and compare with Tableau.</p></article></div>
+      <section class="activity" data-quiz><h3>Compute Using check</h3><p>Region is on Rows and Month is on Columns. A running total must restart for each Region and move Jan → Dec. Which dimension should be addressed?</p><div class="quiz-options"><button data-correct="true" data-feedback="Correct. Address Month across the row; Region forms the partitions where the calculation restarts.">Month</button><button data-correct="false" data-feedback="Addressing Region would move down regions instead of through months.">Region</button><button data-correct="false" data-feedback="Sales is the expression being calculated, not the addressing dimension.">Sales</button></div><p class="feedback" aria-live="polite"></p></section>
+    </div></section>
+
+    <section class="container" id="S11-07">
+      <p class="eyebrow">S11-07 · Table-calculation lab</p><h2>Use a compact set of views to answer four different questions.</h2>
+      <section class="s07-practice-set"><div class="s07-practice-grid">
+        <article class="s07-guided-practice"><span>Task 4 · accumulate</span><h3>Running sales</h3><p>Build monthly Sales as a line. Duplicate the measure, apply Running Total and compute using Month.</p><details><summary>Step-by-step</summary><ol><li>Order Date → Columns; choose continuous Month.</li><li>Sales → Rows.</li><li>Duplicate Sales on Rows.</li><li>On the second pill choose Quick Table Calculation → Running Total.</li><li>Edit Table Calculation and address Month.</li></ol></details><details><summary>Business interpretation</summary><p>The final mark equals the total for the partition; every earlier mark shows how much had accumulated by that month.</p></details><details><summary>Validation test</summary><p>Manually add the first three monthly values. The third running-total mark must equal their sum.</p></details></article>
+        <article class="s07-guided-practice"><span>Task 5 · compare</span><h3>Month-over-month difference</h3><pre><code>SUM([Sales])
+- LOOKUP(SUM([Sales]), -1)</code></pre><details><summary>Step-by-step</summary><ol><li>Keep Month on Columns and Sales on Rows.</li><li>Create the calculation.</li><li>Address Month.</li><li>Add the value to Tooltip or a second axis.</li><li>Find the largest positive and negative changes.</li></ol></details><p>Explain why the first month is NULL: it has no previous addressed mark.</p><details><summary>Stretch: percentage change</summary><pre><code>(SUM([Sales]) - LOOKUP(SUM([Sales]), -1))
+/ ABS(LOOKUP(SUM([Sales]), -1))</code></pre><p>Protect against zero denominators when adapting this pattern to other data.</p></details></article>
+        <article class="s07-guided-practice"><span>Task 6 · smooth</span><h3>Three-month moving average</h3><pre><code>WINDOW_AVG(SUM([Sales]), -2, 0)</code></pre><details><summary>Step-by-step</summary><ol><li>Build raw monthly Sales.</li><li>Duplicate the measure.</li><li>Apply the custom calculation above.</li><li>Address Month.</li><li>Use a dual axis only if both scales match and the comparison remains readable.</li></ol></details><p>Identify one short-term spike that becomes less prominent and explain what smoothing hides.</p><details><summary>Window check</summary><p>At the fourth mark, the window contains marks 2, 3 and 4. Offset 0 is current; -1 and -2 are the two previous marks.</p></details></article>
+        <article class="s07-guided-practice"><span>Task 7 · rank</span><h3>Categories within each region</h3><pre><code>RANK(SUM([Sales]))</code></pre><details><summary>Step-by-step</summary><ol><li>Region and Category → Rows.</li><li>Sales → Columns.</li><li>Create the rank calculation.</li><li>Use Specific Dimensions: address Category.</li><li>Confirm rank restarts inside every Region.</li></ol></details><details><summary>Debugging clue</summary><p>If one global rank runs from 1 to 12, Region is being addressed or included in the same partition. Reconfigure Specific Dimensions.</p></details></article>
+      </div></section>
+      <section class="activity" data-quiz><h3>Interpret the NULL</h3><p>The first mark in a month-over-month difference is NULL. What is the best explanation?</p><div class="quiz-options"><button data-correct="false" data-feedback="The first month can have sales; the missing value belongs to the comparison.">The first month has no sales</button><button data-correct="true" data-feedback="Correct. LOOKUP with offset -1 has no previous mark at the start of the partition.">There is no previous mark to compare</button><button data-correct="false" data-feedback="NULL here is expected table-calculation behaviour, not proof of a broken data source.">The data source connection failed</button></div><p class="feedback" aria-live="polite"></p></section>
+      <section class="s11-capstone">
+        <p class="eyebrow">Capstone · choose, build, validate, explain</p><h2>Create a regional performance diagnostic.</h2>
+        <p class="lead">Management wants to see each state's sales, its contribution to regional sales and its rank within the region.</p>
+        <div class="s11-capstone-grid"><article><span>1 · Stable benchmark</span><strong>Regional Sales</strong><p>Build with a FIXED LOD at Region grain.</p></article><article><span>2 · Contribution</span><strong>State Sales ÷ Regional Sales</strong><p>Aggregate both sides consistently and format as a percentage.</p></article><article><span>3 · Responsive comparison</span><strong>Rank states inside Region</strong><p>Use a table calculation that addresses State and partitions by Region.</p></article><article><span>4 · Validation</span><strong>Prove the result</strong><p>Check repeated regional totals, contributions near 100% and rank restarts.</p></article></div>
+        <details><summary>Reveal suggested calculations</summary><pre><code>// Regional Sales
+{ FIXED [Region] : SUM([Sales]) }
+
+// State Contribution to Region
+SUM([Sales]) / MIN([Regional Sales])
+
+// State Rank within Region
+RANK(SUM([Sales]))</code></pre></details>
+        <details><summary>Reflection prompts</summary><ol><li>Which metric should remain stable when State is added or removed?</li><li>Which result should change if the visible states change?</li><li>What happens to the FIXED benchmark when Category becomes a context filter?</li><li>What does one mark represent in the final view?</li></ol></details>
+      </section>
+    </section>
+
+    <section class="section-band light" id="S11-08"><div class="container">
+      <p class="eyebrow">S11-08 · Decision check</p><h2>Choose the calculation from the behaviour the answer needs.</h2>
+      <div class="s11-decision-flow"><article><span>1</span><strong>Does the metric use each source row?</strong><p>Use a row-level calculation.</p></article><article><span>2</span><strong>Does it use the view's current grain?</strong><p>Use an aggregate calculation.</p></article><article><span>3</span><strong>Must it use a different or stable grain?</strong><p>Use FIXED, INCLUDE or EXCLUDE.</p></article><article><span>4</span><strong>Must it respond to visible marks and layout?</strong><p>Use a table calculation and configure Compute Using.</p></article></div>
+      <div class="s11-exit-ticket"><h3>Exit ticket</h3><ol><li>Why might a FIXED value ignore a Category filter?</li><li>What is the difference between addressing and partitioning?</li><li>Which calculation would you use for customer lifetime sales? Why?</li><li>Which calculation would you use for a three-month moving average? Why?</li></ol></div>
+      <section class="s11-final-check"><p class="eyebrow">Final knowledge check</p><div class="s11-final-check-grid">
+        <section class="activity" data-quiz><h3>1 · Stable grain</h3><p>Customer lifetime sales must not change when Category enters the view.</p><div class="quiz-options"><button data-correct="true" data-feedback="Correct. FIXED declares customer grain independently of view detail.">FIXED Customer LOD</button><button data-correct="false" data-feedback="Percent of total depends on visible marks.">Percent of Total</button></div><p class="feedback" aria-live="polite"></p></section>
+        <section class="activity" data-quiz><h3>2 · Visible sequence</h3><p>Sales must accumulate Jan → Dec and restart each year.</p><div class="quiz-options"><button data-correct="false" data-feedback="EXCLUDE changes data grain but does not accumulate an ordered sequence.">EXCLUDE Year</button><button data-correct="true" data-feedback="Correct. Address Month and partition by Year.">Running total; Month addressed, Year partitioned</button></div><p class="feedback" aria-live="polite"></p></section>
+        <section class="activity" data-quiz><h3>3 · Filter order</h3><p>Which filter can change a FIXED result before it is calculated?</p><div class="quiz-options"><button data-correct="false" data-feedback="A normal dimension filter happens after FIXED in today's simplified model.">Normal dimension filter</button><button data-correct="true" data-feedback="Correct. Context filters act before FIXED LOD expressions.">Context filter</button><button data-correct="false" data-feedback="Table-calculation filters happen much later.">Table-calculation filter</button></div><p class="feedback" aria-live="polite"></p></section>
+      </div></section>
+      <div class="hero-actions"><a class="button" href="../session-12/index.html">Continue to Session 12</a><a class="button secondary" href="#S11-00">Review from the start</a></div>
+    </div></section>
+  </main>
+  <script src="../../assets/js/main.js"></script><script src="../../assets/js/course-calendar.js"></script>
+</body>
+</html>
