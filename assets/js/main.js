@@ -3,6 +3,13 @@
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   document.documentElement.classList.add('js');
 
+  const sessionOneKnowledge = $('#S01-10');
+  const sessionOneApplying = $('#S01-09');
+  const sessionOneExploring = $('#S01-08');
+  if (sessionOneKnowledge && sessionOneApplying && sessionOneExploring) {
+    sessionOneExploring.before(sessionOneKnowledge, sessionOneApplying);
+  }
+
   const notesButton = $('[data-toggle-notes]');
   const savedNotes = localStorage.getItem('esbs-notes-hidden') === 'true';
   document.body.classList.toggle('notes-hidden', savedNotes);
@@ -17,17 +24,12 @@
   }
 
   const progressStorageKey = `esbs-student-progress:${window.location.pathname}`;
-  let savedProgress = {};
-  try {
-    savedProgress = JSON.parse(localStorage.getItem(progressStorageKey) || '{}');
-  } catch (_error) {
-    savedProgress = {};
-  }
+  localStorage.removeItem(progressStorageKey);
 
   $$('[data-quiz]').forEach((quiz, quizIndex) => {
     const feedback = $('.feedback', quiz);
     const options = $$('.quiz-options button', quiz);
-    options.forEach((button, optionIndex) => {
+    options.forEach((button) => {
       button.addEventListener('click', () => {
         const ok = button.dataset.correct === 'true';
         $$('.quiz-options button', quiz).forEach((option) => {
@@ -40,13 +42,9 @@
           feedback.textContent = button.dataset.feedback || (ok ? 'Correct.' : 'Not quite.');
           feedback.className = `feedback ${ok ? 'ok' : 'no'}`;
         }
-        savedProgress[quizIndex] = optionIndex;
-        localStorage.setItem(progressStorageKey, JSON.stringify(savedProgress));
         updateProgress();
       });
     });
-    const savedOption = Number(savedProgress[quizIndex]);
-    if (Number.isInteger(savedOption) && savedOption >= 0 && savedOption < options.length) options[savedOption].click();
   });
 
   $$('[data-tabs]').forEach((tabs) => {
@@ -83,6 +81,13 @@
     });
   });
 
+  $$('[data-flip-card]').forEach((card) => {
+    card.addEventListener('click', () => {
+      const flipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-pressed', String(flipped));
+    });
+  });
+
   $$('[data-w02-group-selector]').forEach((selector) => {
     const rootSelector = selector.dataset.caseRoot;
     const caseRoot = rootSelector ? document.querySelector(rootSelector) : null;
@@ -92,6 +97,7 @@
     const placeholder = $('[data-w02-placeholder]', caseRoot);
     const selectedLabel = $('[data-w02-selected-label]', selector);
     const storageKey = `esbs-${window.location.pathname}-selected-group`;
+    localStorage.removeItem(storageKey);
 
     const activateGroup = (group) => {
       buttons.forEach((button) => {
@@ -104,7 +110,6 @@
       });
       if (placeholder) placeholder.hidden = true;
       if (selectedLabel) selectedLabel.textContent = `Group ${group}`;
-      localStorage.setItem(storageKey, group);
       updateProgress();
     };
 
@@ -113,10 +118,6 @@
       button.addEventListener('click', () => activateGroup(button.dataset.w02GroupButton));
     });
 
-    const savedGroup = localStorage.getItem(storageKey);
-    if (savedGroup && buttons.some((button) => button.dataset.w02GroupButton === savedGroup)) {
-      activateGroup(savedGroup);
-    }
   });
 
   $$('[data-nav-menu]').forEach((menu) => {
@@ -406,7 +407,7 @@
   if (progressWrap && !$('.local-progress-note', progressWrap)) {
     const note = document.createElement('small');
     note.className = 'local-progress-note';
-    note.textContent = 'Progress is stored only in this browser. It is not an official record, does not sync between devices, and is lost if browser data is cleared.';
+    note.textContent = 'Practice progress is temporary. Answers and completion reset whenever the page is opened or reloaded.';
     progressWrap.append(note);
   }
 
