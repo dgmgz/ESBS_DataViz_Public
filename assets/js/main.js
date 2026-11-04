@@ -411,5 +411,26 @@
     progressWrap.append(note);
   }
 
+  function addLocalPublicationControl() {
+    if (window.location.protocol !== 'file:') return;
+    const match = window.location.pathname.match(/\/sessions\/(session-\d+|workshop-\d+)\//);
+    const main = $('main');
+    if (!match || !main || $('[data-local-publication-control]')) return;
+    const courseItem = match[1];
+    const control = document.createElement('section');
+    control.className = 'local-publication-control';
+    control.dataset.localPublicationControl = '';
+    control.innerHTML = `
+      <div>
+        <span>Local instructor control</span>
+        <strong>Publish ${courseItem} when it is ready</strong>
+        <p>This control only appears when the HTML is opened locally. GitHub will ask you to confirm the course item and choose <b>publish</b>; no credential is stored in this page.</p>
+      </div>
+      <a class="button" href="https://github.com/dgmgz/ESBS_DataViz/actions/workflows/update-publication.yml" target="_blank" rel="noopener noreferrer">Publish this session on GitHub ↗</a>`;
+    main.append(control);
+  }
+
+  addLocalPublicationControl();
+
   updateProgress();
 })();
