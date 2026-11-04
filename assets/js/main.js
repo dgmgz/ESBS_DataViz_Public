@@ -424,9 +424,9 @@
       <div>
         <span>Local instructor control</span>
         <strong>Publish ${courseItem} when it is ready</strong>
-        <p>This control only appears when the HTML is opened locally. GitHub will ask you to confirm the course item and choose <b>publish</b>; no credential is stored in this page.</p>
+        <p>This control only appears when the HTML is opened locally. Sign in to GitHub as <b>dgmgz</b> if requested, then confirm the course item and choose <b>publish</b>. No credential is stored in this page.</p>
       </div>
-      <a class="button" href="https://github.com/dgmgz/ESBS_DataViz/actions/workflows/update-publication.yml" target="_blank" rel="noopener noreferrer">Publish this session on GitHub ↗</a>`;
+      <a class="button" href="https://github.com/login?return_to=%2Fdgmgz%2FESBS_DataViz%2Factions%2Fworkflows%2F386543315" target="_blank" rel="noopener noreferrer">Publish this session on GitHub ↗</a>`;
     main.append(control);
   }
 
