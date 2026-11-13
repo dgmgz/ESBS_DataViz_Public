@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Session 2 · Getting Started with Tableau</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="../../index.html">
+        <img class="brand-mark" src="../../assets/images/master-programme.webp" alt="Master's programme visual identity">
+        <span>ESBS Data Visualisation</span>
+      </a>
+      <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../session-01/index.html">Previous</a>
+        <a aria-current="page" href="index.html">Session 2</a>
+        <span class="publication-unavailable" aria-disabled="true" title="Coming soon">Next</span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero session-hero">
+      <div class="hero-inner hero-grid">
+        <div>
+          <p class="eyebrow">Session 2 · Tableau Building Blocks</p>
+          <h1>Getting Started with Tableau</h1>
+          <p>Session 1 taught us to start with the question. Session 2 takes the next step: get the tool ready, inspect the data, then build and publish a first reviewable workbook.</p>
+          <p class="hero-statement">Tableau reads structure. You provide business meaning.</p>
+          <div class="hero-actions">
+            <a class="button" href="#S02-01">Start with the tool</a>
+            <a class="button secondary" href="#journey">Today's Journey</a>
+          </div>
+        </div>
+        <div class="hero-visual s02-value-chain" aria-label="Session 2 learning path">
+          <article><span>01</span><strong>Get the Tool</strong><p>Choose the right Tableau environment.</p></article>
+          <article><span>02</span><strong>Inspect Data</strong><p>Understand the CSV and its grain.</p></article>
+          <article><span>03</span><strong>Classify</strong><p>Predict data types before Tableau does.</p></article>
+          <article><span>04</span><strong>Connect</strong><p>Load the file and check the source page.</p></article>
+          <article><span>05</span><strong>Organise</strong><p>Prepare the Data Pane for analysis.</p></article>
+          <article><span>06</span><strong>Build</strong><p>Create a first question-led view.</p></article>
+          <article><span>07</span><strong>Publish</strong><p>Save, share and make the workbook reviewable.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <nav class="session-progress-nav" aria-label="Session sections">
+      <a href="#S02-01">Tool</a>
+      <a href="#S02-02">Install</a>
+      <a href="#S02-03">CSV</a>
+      <a href="#S02-04">Types</a>
+      <a href="#S02-05">Connect</a>
+      <a href="#S02-06">Access</a>
+      <a href="#S02-07">Roles</a>
+      <a href="#S02-08">Organise</a>
+      <a href="#S02-09">Workspace</a>
+      <a href="#S02-10">Show Me</a>
+      <a href="#S02-11">Build</a>
+      <a href="#S02-12">Publish</a>
+      <a href="#session-2-kahoot">Kahoot</a>
+    </nav>
+
+    <section class="container">
+      <div class="progress-wrap" aria-label="Local progress">
+        <strong data-progress-label>0% complete</strong>
+        <progress data-progress max="100" value="0">0%</progress>
+      </div>
+
+      <section id="journey" class="s02-journey">
+        <p class="eyebrow">Today's Journey · Approx. 3h45 incl. setup + hands-on practice</p>
+        <h2>From first launch to reviewable workbook.</h2>
+        <p class="lead">The order matters. We get Tableau ready, download the practice CSV, understand its business meaning, classify the fields, connect it, check Tableau's interpretation, organise the Data Pane, learn the workspace, build a first view and publish it properly.</p>
+        <ol class="s02-timeline">
+          <li><a href="#S02-01"><span>00:00</span><strong>GET</strong><em>Public vs Desktop</em><small>Tool choice</small></a></li>
+          <li><a href="#S02-02"><span>00:15</span><strong>SET UP</strong><em>Install / open</em><small>Ready check</small></a></li>
+          <li><a href="#S02-03"><span>00:30</span><strong>INSPECT</strong><em>Meet the CSV</em><small>Dataset + grain</small></a></li>
+          <li><a href="#S02-04"><span>01:00</span><strong>TYPES</strong><em>Data type icons</em><small>Full classification</small></a></li>
+          <li><a href="#S02-05"><span>01:25</span><strong>CONNECT</strong><em>Data Source page</em><small>CSV workflow</small></a></li>
+          <li><a href="#S02-06"><span>01:50</span><strong>ACCESS</strong><em>Live vs Extract</em><small>Scenario decisions</small></a></li>
+          <li><a href="#S02-07"><span>02:05</span><strong>ROLES</strong><em>Dimensions and measures</em><small>Discrete / continuous</small></a></li>
+          <li><a href="#S02-08"><span>02:35</span><strong>ORGANISE</strong><em>Data Pane tools</em><small>Folders, hierarchy, group, set, bin</small></a></li>
+          <li><a href="#S02-09"><span>03:00</span><strong>NAVIGATE</strong><em>Workspace areas</em><small>Interactive tour</small></a></li>
+          <li><a href="#S02-10"><span>03:15</span><strong>CHOOSE</strong><em>Show Me</em><small>Chart families</small></a></li>
+          <li><a href="#S02-11"><span>03:25</span><strong>BUILD</strong><em>First view</em><small>Student practice</small></a></li>
+          <li><a href="#S02-12"><span>03:40</span><strong>PUBLISH</strong><em>Save and review</em><small>Download enabled</small></a></li>
+          <li><a href="#session-2-kahoot"><span>03:55</span><strong>KAHOOT</strong><em>Final check</em><small>Wrap-up</small></a></li>
+        </ol>
+      </section>
+    </section>
+
+    <section class="phase-divider" aria-label="Learning phase: get Tableau ready">
+      <div class="container"><span class="feature-icon" aria-hidden="true">TL</span><strong>Get Tableau Ready</strong><p>Choose the environment and confirm students can open the tool.</p></div>
+    </section>
+
+    <section class="section-band" id="S02-01">
+      <div class="container">
+        <p class="eyebrow">S02-01 · Tableau Public vs Desktop</p>
+        <h2>Choose the right Tableau environment</h2>
+        <p class="lead">Before we touch a dataset, we need to know where we are working. Tableau Public is the public platform and portfolio space; Tableau Desktop Public Edition is the installed authoring environment we will mainly use for guided exercises.</p>
+        <div class="s02-ecosystem-grid">
+          <article><span>Tableau Public</span><strong>Explore, create and share publicly</strong><p>Use it to browse visualisations, publish selected work to your profile and create vizzes in the browser where available.</p></article>
+          <article><span>Desktop Public Edition</span><strong>Installed authoring workflow</strong><p>Use it to work comfortably with local course files, build views and save to Tableau Public when ready.</p></article>
+          <article><span>Course workflow</span><strong>Build locally, publish selected work</strong><p>We will mainly build using the desktop application and publish selected work to Tableau Public.</p></article>
+        </div>
+        <div class="table-scroll" role="region" aria-label="Tableau Public and Desktop comparison" tabindex="0">
+          <table class="compact-table dataset-preview">
+            <thead><tr><th>Question</th><th>Tableau Public</th><th>Desktop Public Edition</th></tr></thead>
+            <tbody>
+              <tr><td>Access</td><td>Web platform and public profile</td><td>Installed desktop application</td></tr>
+              <tr><td>Installation</td><td>Browser access</td><td>Windows or macOS installer</td></tr>
+              <tr><td>Local files</td><td>Can work online where supported</td><td>Comfortable for course CSV work</td></tr>
+              <tr><td>Authoring</td><td>Web authoring where available</td><td>Richer guided classroom workflow</td></tr>
+              <tr><td>Publishing</td><td>Public profile and sharing</td><td>Save / publish to Tableau Public</td></tr>
+              <tr><td>Course use</td><td>Portfolio, review and exploration</td><td>Main practical environment</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="bridge-statement">
+          <span>For this course</span>
+          <p>We will mainly build in Tableau Desktop Public Edition, then publish selected work to Tableau Public so it can be shared, reviewed and kept as part of your portfolio.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="S02-02">
+      <p class="eyebrow">S02-02 · Install / open Tableau</p>
+      <h2>Get Tableau ready</h2>
+      <p class="lead">For this course, install Tableau Desktop Public Edition if you can. If installation is blocked, follow the live demo and use Tableau Public web as a backup route.</p>
+      <section class="activity installation-guide">
+        <h3>Self-guided installation walkthrough</h3>
+        <div class="install-stepper" aria-label="Tableau installation steps">
+          <article><span>01</span><strong>Open Tableau Public</strong><p>Go to the official Tableau Public download page.</p></article>
+          <article><span>02</span><strong>Complete the short form</strong><p>Enter your first name, last name, the closest student/education role available, country/region and university email. Marketing consent is optional.</p></article>
+          <article><span>03</span><strong>Select Download the App</strong><p>Submit the form using the blue official download button.</p></article>
+          <article><span>04</span><strong>Confirm your OS</strong><p>Download or confirm the Windows or macOS installer if Tableau asks you to choose.</p></article>
+          <article><span>05</span><strong>Install</strong><p>Run the downloaded installer and follow the prompts.</p></article>
+          <article><span>06</span><strong>Open and sign in</strong><p>Launch Tableau Desktop Public Edition and use your Tableau Public account.</p></article>
+          <article><span>07</span><strong>Confirm ready</strong><p>You can see the start screen and connect to a file.</p></article>
+        </div>
+        <div class="installation-form-note">
+          <strong>What students will see first</strong>
+          <p>The download page asks for basic registration details before it supplies the installer. Use your real details and university email so your setup remains easy to identify.</p>
+        </div>
+        <div class="setup-actions">
+          <a class="button" href="https://www.tableau.com/products/public/download" target="_blank" rel="noopener noreferrer">Download Tableau Public / Desktop App ↗</a>
+          <a class="button secondary" href="https://help.tableau.com/current/pro/desktop/en-us/public_faq.htm" target="_blank" rel="noopener noreferrer">Official Tableau Public FAQ ↗</a>
+        </div>
+      </section>
+      <div class="os-guidance">
+        <article><span>Windows</span><strong>Run the installer</strong><p>Open the downloaded installer, follow the prompts and allow installation if your device asks for permission.</p></article>
+        <article><span>macOS</span><strong>Open the package</strong><p>Open the downloaded disk image or package and follow the installer prompts.</p></article>
+      </div>
+      <section class="activity ready-check">
+        <h3>Ready check</h3>
+        <div class="chat-instruction">
+          <span>Your task · reaction · 30 seconds</span>
+          <p>React when Tableau opens, you can see the start screen, your Tableau Public account works and you are ready to connect a dataset.</p>
+        </div>
+        <details><summary>Installation problems?</summary><ul>
+          <li>If installation is blocked, check administrator permissions.</li>
+          <li>If your operating system is unsupported, use Tableau's official system requirements page.</li>
+          <li>If sign-in fails, reset your Tableau Public password or check the verification email.</li>
+          <li>If you are using a corporate laptop, restrictions may require IT support.</li>
+        </ul></details>
+      </section>
+      <div class="bridge-statement">
+        <span>Next step</span>
+        <p>Now that Tableau is ready, let's look at the data before opening it. The tool should not be the first thing that interprets the CSV.</p>
+      </div>
+    </section>
+
+    <section class="phase-divider light" aria-label="Learning phase: understand the data">
+      <div class="container"><span class="feature-icon" aria-hidden="true">CSV</span><strong>Understand the Data</strong><p>Inspect the CSV, infer the grain and classify fields before building.</p></div>
+    </section>
+
+    <section class="section-band" id="S02-03">
+      <div class="container">
+        <p class="eyebrow">S02-03 · Meet the Practice CSV</p>
+        <h2>Meet the data before Tableau does</h2>
+        <p class="lead">Before connecting a dataset to any BI tool, inspect it first. Ask what one row represents, which fields identify things, which fields group things and which fields can be safely aggregated.</p>
+        <div class="dataset-story">
+          <article><span>What it represents</span><strong>A fictional multi-club football business dataset.</strong><p>Matches, clubs, attendance, ticketing, revenue, segments, channels, geography, weather and digital engagement.</p></article>
+          <article><span>Grain</span><strong>We will infer the row meaning from the preview.</strong><p>Do not assume one row means one match. Look for which values repeat and which values change.</p></article>
+          <article><span>Why grain matters</span><strong>Aggregation depends on the row level.</strong><p>If you misunderstand what one row represents, totals, averages and charts can become misleading.</p></article>
+        </div>
+        <div class="dataset-meta-grid">
+          <article><span>Rows</span><strong>20,000</strong><p>Large enough to feel real, small enough for student laptops.</p></article>
+          <article><span>Fields</span><strong>35</strong><p>Identifiers, dates, categories, measures, rates, geography and yes/no fields.</p></article>
+          <article><span>Safe to publish</span><strong>Synthetic</strong><p>No real students, fans, clubs, companies or confidential data.</p></article>
+          <article><span>Teaching issues</span><strong>Controlled messiness</strong><p>Nulls, inconsistent labels, repeated match values and numeric-looking IDs.</p></article>
+        </div>
+        <section class="activity dataset-download-card">
+          <div class="resource-step-heading">
+            <div>
+              <p class="eyebrow">Download practice dataset</p>
+              <h3>Get the file before we analyse its structure</h3>
+            </div>
+            <a class="button" href="../../data/course/sport-business-dataset.csv" download>Download Practice Dataset</a>
+          </div>
+          <p>The important thing is not memorising every field. It is understanding what kind of business event each row is describing before Tableau interprets it for us.</p>
+        </section>
+        <section class="field-dictionary" aria-labelledby="field-dictionary-title">
+          <p class="eyebrow">Meet the fields</p>
+          <h3 id="field-dictionary-title">Field dictionary before the CSV preview</h3>
+          <p>Use these grouped field families to understand the business meaning of the dataset. Then the raw file will be easier to inspect.</p>
+          <details open class="recommendation-panel"><summary>Match and fixture fields</summary>
+            <div class="table-scroll" role="region" aria-label="Match field dictionary" tabindex="0">
+              <table class="compact-table dataset-preview recommendation-table">
+                <thead><tr><th>Field</th><th>Plain-English meaning</th><th>Example</th><th>Possible business use</th></tr></thead>
+                <tbody>
+                  <tr><td>Match_ID</td><td>Unique match identifier label.</td><td>M1001</td><td>Keep fixture records distinct.</td></tr>
+                  <tr><td>Match_Code</td><td>Numeric-looking match code.</td><td>1001</td><td>Identify matches; inspect before treating as a measure.</td></tr>
+                  <tr><td>Club</td><td>Club being analysed for the row.</td><td>Northside FC</td><td>Compare performance by club.</td></tr>
+                  <tr><td>Opponent</td><td>Opposing club for the fixture.</td><td>Northern Royals</td><td>Analyse opponent effects on demand.</td></tr>
+                  <tr><td>Competition</td><td>Competition type.</td><td>League</td><td>Compare league, cup and European matches.</td></tr>
+                  <tr><td>Season</td><td>Season label.</td><td>2024-25</td><td>Group or compare by season.</td></tr>
+                  <tr><td>Match_Date</td><td>Calendar date of the fixture.</td><td>2024-08-10</td><td>Analyse time trends.</td></tr>
+                  <tr><td>Kickoff_Time</td><td>Scheduled kickoff time.</td><td>12:30</td><td>Check whether timing affects demand.</td></tr>
+                  <tr><td>Day_Type</td><td>Weekend or weekday classification.</td><td>Weekend</td><td>Compare attendance by fixture timing.</td></tr>
+                  <tr><td>Result</td><td>Match outcome.</td><td>Win</td><td>Compare performance and commercial outcomes.</td></tr>
+                  <tr><td>Derby_Match</td><td>Whether the fixture is a derby.</td><td>True</td><td>Separate high-rivalry fixtures from others.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details class="recommendation-panel"><summary>Venue and geography fields</summary>
+            <div class="table-scroll" role="region" aria-label="Venue and geography field dictionary" tabindex="0">
+              <table class="compact-table dataset-preview recommendation-table">
+                <thead><tr><th>Field</th><th>Plain-English meaning</th><th>Example</th><th>Possible business use</th></tr></thead>
+                <tbody>
+                  <tr><td>Stadium</td><td>Venue name.</td><td>Northside Arena</td><td>Compare venues and build geography hierarchy.</td></tr>
+                  <tr><td>Stadium_Code</td><td>Numeric-looking stadium identifier.</td><td>101</td><td>Identify venues; do not sum it.</td></tr>
+                  <tr><td>City</td><td>City where the match is played.</td><td>Manchester</td><td>Geographic analysis and maps.</td></tr>
+                  <tr><td>Country</td><td>Country of the fixture.</td><td>England</td><td>Country-level grouping or map role.</td></tr>
+                  <tr><td>Stadium_Capacity</td><td>Maximum venue capacity.</td><td>54800</td><td>Compare demand against capacity.</td></tr>
+                  <tr><td>Match_Attendance</td><td>Number of spectators attending the match.</td><td>50450</td><td>Compare demand across matches, competitions or time.</td></tr>
+                  <tr><td>Occupancy_Rate</td><td>Share of capacity filled.</td><td>0.9206</td><td>Evaluate crowd utilisation; format as percentage.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details class="recommendation-panel"><summary>Fan and ticketing fields</summary>
+            <div class="table-scroll" role="region" aria-label="Fan and ticketing field dictionary" tabindex="0">
+              <table class="compact-table dataset-preview recommendation-table">
+                <thead><tr><th>Field</th><th>Plain-English meaning</th><th>Example</th><th>Possible business use</th></tr></thead>
+                <tbody>
+                  <tr><td>Fan_Segment</td><td>Audience segment for the row.</td><td>Student</td><td>Compare customer behaviour by segment.</td></tr>
+                  <tr><td>Ticket_Category</td><td>Ticket product category.</td><td>Standard</td><td>Analyse product mix and pricing.</td></tr>
+                  <tr><td>Sales_Channel</td><td>How the ticket was sold.</td><td>Mobile App</td><td>Compare channel performance.</td></tr>
+                  <tr><td>Promotion_Type</td><td>Promotion applied, if any.</td><td>Student Deal</td><td>Evaluate campaign or offer performance.</td></tr>
+                  <tr><td>Segment_Tickets_Sold</td><td>Tickets sold for that segment/category/channel combination.</td><td>640</td><td>Analyse segment demand.</td></tr>
+                  <tr><td>Average_Ticket_Price</td><td>Average ticket price for the row.</td><td>28.50</td><td>Compare pricing across segments and categories.</td></tr>
+                  <tr><td>Renewal_Rate</td><td>Estimated renewal or retention rate.</td><td>0.8447</td><td>Assess fan loyalty risk.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details class="recommendation-panel"><summary>Commercial, digital and context fields</summary>
+            <div class="table-scroll" role="region" aria-label="Commercial and context field dictionary" tabindex="0">
+              <table class="compact-table dataset-preview recommendation-table">
+                <thead><tr><th>Field</th><th>Plain-English meaning</th><th>Example</th><th>Possible business use</th></tr></thead>
+                <tbody>
+                  <tr><td>Ticket_Revenue</td><td>Ticket income for the row.</td><td>23499.06</td><td>Compare commercial performance.</td></tr>
+                  <tr><td>Merchandise_Revenue</td><td>Merchandise income linked to the row.</td><td>7130.40</td><td>Analyse matchday spend beyond tickets.</td></tr>
+                  <tr><td>Food_Beverage_Revenue</td><td>Food and beverage income.</td><td>9820.15</td><td>Analyse in-stadium spend.</td></tr>
+                  <tr><td>Total_Matchday_Revenue</td><td>Combined matchday revenue measure.</td><td>40449.61</td><td>Evaluate total commercial performance.</td></tr>
+                  <tr><td>Weather</td><td>Weather category for the fixture.</td><td>Rain</td><td>Check context effects on attendance.</td></tr>
+                  <tr><td>Team_Form_Index</td><td>Team form index before the match.</td><td>0.62</td><td>Test whether form relates to demand.</td></tr>
+                  <tr><td>Opponent_Strength</td><td>Opponent strength index.</td><td>0.74</td><td>Assess fixture attractiveness.</td></tr>
+                  <tr><td>Social_Engagement</td><td>Digital engagement count.</td><td>14200</td><td>Compare online attention and attendance.</td></tr>
+                  <tr><td>New_Followers</td><td>New follower count around the fixture.</td><td>520</td><td>Track audience growth.</td></tr>
+                  <tr><td>Sponsor_Impressions</td><td>Estimated sponsor impression count.</td><td>84000</td><td>Assess sponsorship exposure.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </section>
+        <div class="dataset-preview-wrap">
+          <div class="resource-step-heading">
+            <div>
+              <p class="eyebrow">CSV preview</p>
+              <h3>Now look at the raw file</h3>
+            </div>
+          </div>
+          <p>This is what Tableau will receive: rows and columns. Your job is to bring the business meaning with you.</p>
+          <div class="table-scroll" role="region" aria-label="Sport business dataset preview" tabindex="0">
+            <table class="compact-table dataset-preview">
+              <thead><tr><th>Match_ID</th><th>Club</th><th>Competition</th><th>Match_Date</th><th>Day_Type</th><th>City</th><th>Match_Attendance</th><th>Occupancy_Rate</th><th>Fan_Segment</th><th>Ticket_Revenue</th><th>Renewal_Rate</th><th>Derby_Match</th></tr></thead>
+              <tbody>
+                <tr><td>M1001</td><td>Northside FC</td><td>League</td><td>2024-08-10</td><td>Weekend</td><td>Manchester</td><td>50450</td><td>0.9206</td><td>Season Ticket Holder</td><td>23499.06</td><td>0.919</td><td>Yes</td></tr>
+                <tr><td>M1007</td><td>Northside FC</td><td>League</td><td>2024-09-03</td><td>Weekday</td><td>Manchester</td><td>29900</td><td>0.5456</td><td>Student</td><td>3663.14</td><td>0.7646</td><td>No</td></tr>
+                <tr><td>M1036</td><td>Northside FC</td><td>Cup</td><td>2025-02-14</td><td>Weekday</td><td>Manchester</td><td>36950</td><td>0.6743</td><td>Corporate</td><td>22095.0</td><td>0.8186</td><td>No</td></tr>
+                <tr><td>M1104</td><td>Harbour City FC</td><td>Cup</td><td>2024-09-23</td><td>Weekday</td><td>Liverpool</td><td>29700</td><td>0.6875</td><td>Student</td><td>4926.18</td><td>0.8447</td><td>No</td></tr>
+                <tr><td>M1217</td><td>Capital Athletic</td><td>Cup</td><td>2024-12-28</td><td>Weekend</td><td>London</td><td>48850</td><td>0.8008</td><td>Away Supporter</td><td>53778.12</td><td>0.747</td><td>Yes</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <details><summary>View more fields</summary><div class="mini-data-row"><span>Match_Code</span><span>Stadium_Code</span><span>Kickoff_Time</span><span>Ticket_Category</span><span>Sales_Channel</span><span>Promotion_Type</span><span>Segment_Tickets_Sold</span><span>Average_Ticket_Price</span><span>Total_Matchday_Revenue</span><span>Sponsor_Impressions</span><span>Weather</span></div></details>
+        </div>
+
+        <section class="activity" data-quiz>
+          <h3>Quick challenge — what does one row represent?</h3>
+          <p>Look at the preview first. Which statement is the most precise description of one row?</p>
+          <div class="quiz-options">
+            <button data-correct="false" data-feedback="Not quite. Match-level values repeat across detailed rows.">One match</button>
+            <button data-correct="false" data-feedback="Closer, but still too broad. Rows are more detailed than club-match.">One club per match</button>
+            <button data-correct="true" data-feedback="Correct. Each row combines a match, fan segment, ticket category and sales channel.">Match + segment + category + channel</button>
+            <button data-correct="false" data-feedback="No. The dataset is not individual fan transaction data.">One fan transaction</button>
+          </div>
+          <p class="feedback" aria-live="polite"></p>
+          <details><summary>Reveal the answer</summary><p><strong>One row = club-match + fan segment + ticket category + sales channel.</strong> You can see this because match-level fields repeat while segment, ticket and channel fields vary.</p></details>
+          <p class="visual-principle">Why it matters: if you misunderstand the grain, you can double-count, aggregate incorrectly, misread totals and build misleading charts.</p>
+        </section>
+
+      </div>
+    </section>
+
+    <section class="container" id="S02-04">
+      <p class="eyebrow">S02-04 · Understand data types</p>
+      <h2>Data type is what is stored</h2>
+      <p class="lead">We understand the business meaning of the fields. Now we need a different question: what kind of values are stored, and how might Tableau read them?</p>
+      <div class="field-principle-grid data-type-gallery">
+        <article><span class="concept-icon" aria-hidden="true">Abc</span><strong>Text / String</strong><p>Stores labels or categories. Example: `Competition` = League.</p></article>
+        <article><span class="concept-icon" aria-hidden="true">#</span><strong>Number</strong><p>Stores quantities, currency, counts, rates and numeric-looking codes. Example: `Match_Attendance` = 50450.</p></article>
+        <article><span class="concept-icon" aria-hidden="true">Cal</span><strong>Date</strong><p>Stores calendar values. Example: `Match_Date` = 2024-08-10.</p></article>
+        <article><span class="concept-icon" aria-hidden="true">Time</span><strong>Date & Time / Time</strong><p>Stores time-like values when parsed correctly. Example: `Kickoff_Time` = 12:30.</p></article>
+        <article><span class="concept-icon" aria-hidden="true">Geo</span><strong>Geographic role</strong><p>Text fields can be assigned location meaning. Example: `City` = Manchester.</p></article>
+        <article><span class="concept-icon" aria-hidden="true">T/F</span><strong>Boolean / True-False</strong><p>Stores a binary flag. Example: `Derby_Match` = True.</p></article>
+      </div>
+      <div class="bridge-statement">
+        <span>Important distinction</span>
+        <p>A data type tells Tableau what is stored. It does not automatically tell Tableau how we want to analyse it. `Stadium_Code` may look numeric, but it identifies a stadium; summing it would be meaningless.</p>
+      </div>
+      <section class="activity reasoning-exercise field-reveal-activity" data-field-reveal-activity>
+        <p class="eyebrow">Classify the dataset</p>
+        <h3>Classify every field by Tableau data type</h3>
+        <p>We now know what a data type is. Let's classify the entire dataset before Tableau does.</p>
+        <div class="chat-instruction">
+          <span>Let's classify them together · Instructor-led</span>
+          <p>For each field: read the field name, predict the data type, explain your reasoning, then click to reveal. Do not worry about Dimension vs Measure yet. Right now we are asking: <strong>what kind of value is stored?</strong></p>
+        </div>
+        <div class="classification-choice-bank" aria-label="Possible data type answers">
+          <strong>Possible answers students can use</strong>
+          <span><b>Abc</b> Text / String</span>
+          <span><b>#</b> Number (whole)</span>
+          <span><b>1.2</b> Number (decimal)</span>
+          <span><b>Cal</b> Date</span>
+          <span><b>Time</b> Date &amp; Time / Time</span>
+          <span><b>T/F</b> Boolean / Yes-No</span>
+          <span><b>?</b> Needs inspection</span>
+        </div>
+        <p class="classification-clarifier"><strong>Useful challenge:</strong> “Geographic” is not a stored data type. A city or country is usually stored as text, then assigned a geographic role in Tableau.</p>
+        <div class="field-reveal-toolbar" aria-label="Field reveal controls">
+          <strong data-field-progress>0 / 35 fields revealed</strong>
+          <div>
+            <button type="button" class="button secondary" data-field-reveal-all>Reveal all</button>
+            <button type="button" class="button secondary" data-field-reset>Reset</button>
+          </div>
+        </div>
+        <div class="field-family">
+          <h4>Match</h4>
+          <div class="field-reveal-grid">
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Match_ID</strong><em>Example: M1001</em><small>Click to reveal</small></span><span class="field-back"><strong>Match_ID</strong><b>Data type</b><em>Text / String</em><b>Analytical note</b><em>Identifier, usually Dimension</em><p>This value identifies a match. Mathematical operations such as SUM(Match_ID) have no business meaning.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Match_Code</strong><em>Example: 1001</em><small>Click to reveal</small></span><span class="field-back"><strong>Match_Code</strong><b>Data type</b><em>Number</em><b>Analytical note</b><em>Identifier, usually Dimension</em><p>It is stored with digits, but it identifies a fixture. A numeric-looking code is not automatically a measure.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Club</strong><em>Example: Northside FC</em><small>Click to reveal</small></span><span class="field-back"><strong>Club</strong><b>Data type</b><em>Text / String</em><p>A club name is a category used to group and compare rows.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Opponent</strong><em>Example: Northern Royals</em><small>Click to reveal</small></span><span class="field-back"><strong>Opponent</strong><b>Data type</b><em>Text / String</em><p>The opponent is a categorical label that can help explain fixture demand.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Competition</strong><em>Example: League</em><small>Click to reveal</small></span><span class="field-back"><strong>Competition</strong><b>Data type</b><em>Text / String</em><p>Competition stores category labels such as League, Cup or European.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Season</strong><em>Example: 2024-25</em><small>Click to reveal</small></span><span class="field-back"><strong>Season</strong><b>Data type</b><em>Text / String</em><p>This is a season label, not a calendar date. It groups matches by season.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Match_Date</strong><em>Example: 2024-08-10</em><small>Click to reveal</small></span><span class="field-back"><strong>Match_Date</strong><b>Data type</b><em>Date</em><p>The value represents a calendar date and enables time-based analysis.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Kickoff_Time</strong><em>Example: 12:30</em><small>Click to reveal</small></span><span class="field-back"><strong>Kickoff_Time</strong><b>Data type</b><em>Text / Date & Time check</em><p>It stores a time-like value. Tableau may need inspection to ensure it parses as intended.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Day_Type</strong><em>Example: Weekend</em><small>Click to reveal</small></span><span class="field-back"><strong>Day_Type</strong><b>Data type</b><em>Text / String</em><p>Weekend and Weekday are category labels for comparing fixture timing.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Result</strong><em>Example: Win</em><small>Click to reveal</small></span><span class="field-back"><strong>Result</strong><b>Data type</b><em>Text / String</em><p>Result is a categorical match outcome used for grouping or comparison.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Derby_Match</strong><em>Example: True</em><small>Click to reveal</small></span><span class="field-back"><strong>Derby_Match</strong><b>Data type</b><em>Boolean / True-False flag</em><b>Analytical note</b><em>Binary category</em><p>The CSV contains True and False. Treat it as a binary flag and verify Tableau recognises the Boolean type.</p></span></button>
+          </div>
+        </div>
+        <div class="field-family">
+          <h4>Venue and Geography</h4>
+          <div class="field-reveal-grid">
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Stadium</strong><em>Example: Northside Arena</em><small>Click to reveal</small></span><span class="field-back"><strong>Stadium</strong><b>Data type</b><em>Text / String</em><p>Stadium is a categorical name used to identify the venue.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Stadium_Code</strong><em>Example: 101</em><small>Click to reveal</small></span><span class="field-back"><strong>Stadium_Code</strong><b>Data type</b><em>Number</em><b>Analytical role</b><em>Dimension / identifier</em><p>The code identifies a stadium. Adding or averaging stadium codes has no business meaning.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>City</strong><em>Example: Manchester</em><small>Click to reveal</small></span><span class="field-back"><strong>City</strong><b>Data type</b><em>Text / String</em><b>Geographic role</b><em>City</em><p>The stored value is text, but Tableau can assign the geographic role City for spatial analysis.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Country</strong><em>Example: England</em><small>Click to reveal</small></span><span class="field-back"><strong>Country</strong><b>Data type</b><em>Text / String</em><b>Geographic role</b><em>Country / Region</em><p>The stored value is text, with a geographic role that supports country-level maps.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Stadium_Capacity</strong><em>Example: 54800</em><small>Click to reveal</small></span><span class="field-back"><strong>Stadium_Capacity</strong><b>Data type</b><em>Number</em><b>Analytical note</b><em>Repeated match-level value</em><p>Capacity is quantitative, but it repeats across detailed rows. Aggregation needs care.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Match_Attendance</strong><em>Example: 50450</em><small>Click to reveal</small></span><span class="field-back"><strong>Match_Attendance</strong><b>Data type</b><em>Number</em><p>Attendance stores a quantitative count and can be aggregated, but the row grain must be understood first.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Occupancy_Rate</strong><em>Example: 0.9206</em><small>Click to reveal</small></span><span class="field-back"><strong>Occupancy_Rate</strong><b>Data type</b><em>Number</em><b>Analytical note</b><em>Format as percentage</em><p>This is a rate stored as a decimal. It needs percentage formatting and careful aggregation.</p></span></button>
+          </div>
+        </div>
+        <div class="field-family">
+          <h4>Fan and Ticketing</h4>
+          <div class="field-reveal-grid">
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Fan_Segment</strong><em>Example: Student</em><small>Click to reveal</small></span><span class="field-back"><strong>Fan_Segment</strong><b>Data type</b><em>Text / String</em><p>Fan segment is a category used to compare audience behaviour.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Ticket_Category</strong><em>Example: Standard</em><small>Click to reveal</small></span><span class="field-back"><strong>Ticket_Category</strong><b>Data type</b><em>Text / String</em><p>Ticket category is a product label for grouping ticket performance.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Sales_Channel</strong><em>Example: Mobile App</em><small>Click to reveal</small></span><span class="field-back"><strong>Sales_Channel</strong><b>Data type</b><em>Text / String</em><p>Sales channel stores category labels for route-to-market analysis.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Promotion_Type</strong><em>Example: Student Deal</em><small>Click to reveal</small></span><span class="field-back"><strong>Promotion_Type</strong><b>Data type</b><em>Text / String</em><p>Promotion type is a label. Blank or inconsistent values should be inspected later.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Segment_Tickets_Sold</strong><em>Example: 640</em><small>Click to reveal</small></span><span class="field-back"><strong>Segment_Tickets_Sold</strong><b>Data type</b><em>Number</em><p>This stores a ticket count for the row's segment, category and channel.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Average_Ticket_Price</strong><em>Example: 28.50</em><small>Click to reveal</small></span><span class="field-back"><strong>Average_Ticket_Price</strong><b>Data type</b><em>Number</em><b>Analytical note</b><em>Currency / average metric</em><p>This stores a price value. Format as currency and think carefully before averaging averages.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Renewal_Rate</strong><em>Example: 0.8447</em><small>Click to reveal</small></span><span class="field-back"><strong>Renewal_Rate</strong><b>Data type</b><em>Number</em><b>Analytical note</b><em>Format as percentage</em><p>This is a rate stored as a decimal. It should be displayed as a percentage and aggregated with care.</p></span></button>
+          </div>
+        </div>
+        <div class="field-family">
+          <h4>Commercial, Digital and Context</h4>
+          <div class="field-reveal-grid">
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Ticket_Revenue</strong><em>Example: 23499.06</em><small>Click to reveal</small></span><span class="field-back"><strong>Ticket_Revenue</strong><b>Data type</b><em>Number</em><b>Analytical note</b><em>Currency measure</em><p>This stores a financial value that can be summed at the row grain.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Merchandise_Revenue</strong><em>Example: 7130.40</em><small>Click to reveal</small></span><span class="field-back"><strong>Merchandise_Revenue</strong><b>Data type</b><em>Number</em><b>Analytical note</b><em>Currency measure</em><p>This stores merchandise income and should be formatted as currency.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Food_Beverage_Revenue</strong><em>Example: 9820.15</em><small>Click to reveal</small></span><span class="field-back"><strong>Food_Beverage_Revenue</strong><b>Data type</b><em>Number</em><b>Analytical note</b><em>Currency measure</em><p>This stores food and beverage income and can contribute to total matchday value.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Total_Matchday_Revenue</strong><em>Example: 40449.61</em><small>Click to reveal</small></span><span class="field-back"><strong>Total_Matchday_Revenue</strong><b>Data type</b><em>Number</em><b>Analytical note</b><em>Currency measure</em><p>This stores combined matchday revenue. Check whether it repeats or aggregates as expected.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Weather</strong><em>Example: Rain</em><small>Click to reveal</small></span><span class="field-back"><strong>Weather</strong><b>Data type</b><em>Text / String</em><p>Weather stores contextual category labels that can support comparison.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Team_Form_Index</strong><em>Example: 0.62</em><small>Click to reveal</small></span><span class="field-back"><strong>Team_Form_Index</strong><b>Data type</b><em>Number</em><p>This stores an index value that can support comparison or segmentation.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Opponent_Strength</strong><em>Example: 0.74</em><small>Click to reveal</small></span><span class="field-back"><strong>Opponent_Strength</strong><b>Data type</b><em>Number</em><p>This stores an index value describing opponent strength.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Social_Engagement</strong><em>Example: 14200</em><small>Click to reveal</small></span><span class="field-back"><strong>Social_Engagement</strong><b>Data type</b><em>Number</em><p>This stores a digital engagement count that can be compared with commercial outcomes.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>New_Followers</strong><em>Example: 520</em><small>Click to reveal</small></span><span class="field-back"><strong>New_Followers</strong><b>Data type</b><em>Number</em><p>This stores a follower count and can be aggregated or compared across fixtures.</p></span></button>
+            <button type="button" class="field-reveal-card" data-field-card aria-expanded="false"><span class="field-front"><strong>Sponsor_Impressions</strong><em>Example: 84000</em><small>Click to reveal</small></span><span class="field-back"><strong>Sponsor_Impressions</strong><b>Data type</b><em>Number</em><p>This stores an impression count for sponsorship exposure analysis.</p></span></button>
+          </div>
+        </div>
+      </section>
+      <div class="bridge-statement">
+        <span>Our interpretation</span>
+        <p>Good. We now have our own reading of the fields. The next question is whether Tableau will interpret them the same way.</p>
+      </div>
+      <section class="activity" data-quiz>
+        <p class="eyebrow">Predict</p>
+        <h3>What might Tableau assume?</h3>
+        <p>You now know what the fields mean. Tableau only sees structure, so we need to predict which fields are most likely to need inspection.</p>
+        <div class="mini-data-row"><span>Match_Code</span><span>Stadium_Code</span><span>Occupancy_Rate</span><span>Kickoff_Time</span><span>City</span><span>Derby_Match</span></div>
+        <p><strong>Which field would you inspect first because its stored value may not match its business meaning?</strong></p>
+        <div class="quiz-options">
+          <button data-correct="false" data-feedback="This can need checking, especially if Tableau misses the geographic role, but it is less dangerous than a numeric identifier being aggregated.">City</button>
+          <button data-correct="true" data-feedback="Strong choice. Stadium_Code may be numeric, but its business meaning is identifier. It should not be summed or averaged.">Stadium_Code</button>
+          <button data-correct="false" data-feedback="Occupancy_Rate definitely needs formatting and aggregation care, but it is still a numeric rate.">Occupancy_Rate</button>
+          <button data-correct="false" data-feedback="Kickoff_Time may need parsing, but the bigger analytical-role trap is a numeric-looking identifier.">Kickoff_Time</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+        <details><summary>Need a hint?</summary><p>Ask whether a field contains a quantity to analyse or a code used to identify something.</p></details>
+        <details><summary>Reveal the reasoning</summary><p>`Stadium_Code` and `Match_Code` are classic inspection fields. They may look numeric to Tableau, but the business role is identification. The lesson is not that Tableau is wrong; it is that the analyst must check whether the interpretation matches the business meaning.</p></details>
+      </section>
+      <div class="bridge-statement">
+        <span>Now connect</span>
+        <p>We have our own interpretation. Now we can connect the file and check what Tableau actually does with it.</p>
+      </div>
+    </section>
+
+    <section class="container" id="S02-05">
+      <p class="eyebrow">S02-05 · Connect the CSV</p>
+      <h2>Connect your first data source</h2>
+      <p class="lead">We understand the CSV. Now we can connect it and check how Tableau reads it before creating a worksheet.</p>
+      <div class="data-source-flow">
+        <article><span>01</span><strong>Open Tableau</strong><p>Start Tableau Desktop Public Edition.</p></article>
+        <article><span>02</span><strong>Choose connector</strong><p>Use the file connector for a text file / CSV.</p></article>
+        <article><span>03</span><strong>Select the dataset</strong><p>Locate `sport-business-dataset.csv`.</p></article>
+        <article><span>04</span><strong>Review source page</strong><p>Check field names, icons and row preview.</p></article>
+        <article><span>05</span><strong>Confirm ready</strong><p>Only then move to Sheet 1.</p></article>
+      </div>
+      <section class="live-demo-card">
+        <p class="eyebrow">Live Tableau demo</p>
+        <h3>Load the Sport Business Dataset</h3>
+        <div class="live-demo-grid">
+          <div><h4>Goal</h4><p>Connect the CSV and inspect Tableau's initial assumptions.</p></div>
+          <div><h4>What I'll do</h4><ol><li>Open Tableau Desktop Public Edition.</li><li>Choose the text/CSV file connector.</li><li>Select `sport-business-dataset.csv`.</li><li>Review field names, icons and row preview.</li><li>Open Sheet 1.</li></ol></div>
+          <div><h4>What to check</h4><p>Look at `Match_Date`, `Match_Code`, `Stadium_Code`, `Occupancy_Rate`, `Renewal_Rate`, `City` and `Derby_Match`.</p></div>
+          <div><h4>Student output</h4><p>Connect the same file and type <strong>DONE</strong> when your screen matches.</p></div>
+        </div>
+        <details><summary>If your screen looks different</summary><ul><li>If the file is not found, check the download location.</li><li>If a date is text, we will correct it together.</li><li>If Tableau classifies a field differently, type the field name in the chat.</li><li>If your version looks different, focus on the same areas: connection, preview grid, field icons and Sheet 1.</li></ul></details>
+      </section>
+      <section class="activity">
+        <h3>The Data Source page is your inspection room</h3>
+        <figure class="tableau-interface-figure">
+          <img src="../../assets/screenshots/session-02/tableau-data-source-page.png" alt="Tableau Public Data Source page showing the CSV connection, field metadata and row preview" loading="lazy">
+          <figcaption><strong>Use the real screen as a map.</strong> The connection and file sit on the left; field names and detected types appear below; the row preview occupies the main grid. Inspect these areas before opening Sheet 1.</figcaption>
+        </figure>
+        <div class="data-source-map" aria-label="Conceptual Tableau Data Source page map">
+          <div class="source-map-zone connection"><span>Connection area</span><strong>Where the data comes from</strong><p>File, database or published source.</p></div>
+          <div class="source-map-zone table-file"><span>Table / file</span><strong>What Tableau loaded</strong><p>Today: one CSV.</p></div>
+          <div class="source-map-zone fields"><span>Field names + icons</span><strong>How Tableau reads columns</strong><p>Check text, number, date, geography and yes/no fields.</p></div>
+          <div class="source-map-zone preview"><span>Row preview</span><strong>What values look like</strong><p>Scan repeated values, nulls and odd labels.</p></div>
+          <div class="source-map-zone metadata"><span>Metadata / options</span><strong>Extra inspection controls</strong><p>Useful before building views.</p></div>
+        </div>
+        <div class="inspection-checklist">
+          <article><span>01</span><strong>Field names</strong><p>Do they mean what you expect?</p></article>
+          <article><span>02</span><strong>Data types</strong><p>Did Tableau interpret them correctly?</p></article>
+          <article><span>03</span><strong>Row preview</strong><p>Do values look sensible?</p></article>
+          <article><span>04</span><strong>Grain</strong><p>Does one row match the grain we identified?</p></article>
+          <article><span>05</span><strong>Nulls / odd values</strong><p>Anything suspicious before building?</p></article>
+        </div>
+        <p class="visual-principle">Your inspection rule: do not rush to the chart. Check the data first.</p>
+      </section>
+    </section>
+
+    <section class="section-band" id="S02-06">
+      <div class="container">
+        <p class="eyebrow">S02-06 · Live vs Extract</p>
+        <h2>How should Tableau access the data?</h2>
+        <p class="lead">After connecting, Tableau can read from an underlying source or use an extract. This is not a morality test; it is a trade-off between freshness, performance, portability and source dependency.</p>
+        <div class="connection-model">
+          <article><span>Live connection</span><strong>Queries the source when views need data</strong><p>Useful when freshness matters and the source is available and performant.</p></article>
+          <article><span>Extract</span><strong>Uses a stored snapshot / optimised copy</strong><p>Useful for performance, portability, offline work or publishing. The snapshot needs refreshing when source data changes.</p></article>
+          <article><span>Tableau Public</span><strong>Published Public work uses extracts</strong><p>When saving to Tableau Public, use public-suitable data and understand that published work is accessible online.</p></article>
+        </div>
+        <div class="table-scroll" role="region" aria-label="Live and extract comparison" tabindex="0">
+          <table class="compact-table dataset-preview">
+            <thead><tr><th>Consideration</th><th>Live</th><th>Extract</th></tr></thead>
+            <tbody>
+              <tr><td>Data freshness</td><td>Can reflect source changes</td><td>Reflects latest refresh</td></tr>
+              <tr><td>Performance</td><td>Depends on source and network</td><td>Often faster, but not always</td></tr>
+              <tr><td>Source dependency</td><td>Needs source access</td><td>Can work from snapshot</td></tr>
+              <tr><td>Offline use</td><td>Limited</td><td>More suitable</td></tr>
+              <tr><td>Refresh</td><td>No separate extract refresh</td><td>Refresh schedule or manual update</td></tr>
+              <tr><td>Typical use</td><td>Operational data that must stay current</td><td>Portable dashboards and repeated analysis</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <section class="activity">
+          <h3>Quick decisions — Live or Extract?</h3>
+          <p class="reveal-instruction"><strong>Ask first:</strong> students choose Live or Extract and justify the trade-off. Then click the scenario to reveal a recommended answer and its reasoning.</p>
+          <div class="choice-row live-extract-flashcards">
+            <details class="connection-decision-card"><summary><b>Scenario A</b><strong>Ticketing database updates every minute</strong><small>Live or Extract? What requirement matters most?</small><em>Click to reveal</em></summary><div><b>Recommended starting point</b><strong>Live — if minute-by-minute freshness genuinely matters</strong><p>A live connection can query the current source. Confirm that the database and network can support the demand; otherwise a frequently refreshed extract may be the practical compromise.</p><em>Reason: freshness first.</em></div></details>
+            <details class="connection-decision-card"><summary><b>Scenario B</b><strong>CSV updated once per week</strong><small>Live or Extract? How fresh must the analysis be?</small><em>Click to reveal</em></summary><div><b>Recommended starting point</b><strong>Extract / file-based snapshot</strong><p>The source only changes weekly, so real-time querying adds little value. Refresh after the weekly file update.</p><em>Reason: portability and simplicity.</em></div></details>
+            <details class="connection-decision-card"><summary><b>Scenario C</b><strong>Large remote database is slow; reviewed daily</strong><small>Live or Extract? Which trade-off matters?</small><em>Click to reveal</em></summary><div><b>Recommended starting point</b><strong>Extract with a daily refresh</strong><p>Daily freshness satisfies the review cycle while the optimised snapshot can reduce repeated pressure on a slow remote source.</p><em>Reason: performance with sufficient freshness.</em></div></details>
+            <details class="connection-decision-card"><summary><b>Scenario D</b><strong>You need to work offline during a flight</strong><small>Live or Extract? Which option remains available?</small><em>Click to reveal</em></summary><div><b>Recommended starting point</b><strong>Extract</strong><p>A live connection depends on reaching the source. A local extract or file-based snapshot can travel with the workbook and support offline analysis.</p><em>Reason: no source connection available.</em></div></details>
+          </div>
+          <div class="chat-instruction">
+            <span>Your task · 45 seconds · chat</span>
+            <p>Pick one scenario and type <strong>Live</strong> or <strong>Extract</strong> with one reason.</p>
+          </div>
+          <p class="visual-principle">There is no universal winner: choose the access method that best balances freshness, performance, portability and source dependency.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="section-band" id="S02-07">
+      <div class="container">
+        <p class="eyebrow">S02-07 · Dimensions vs Measures</p>
+        <h2>Field role controls the question Tableau can answer</h2>
+        <p class="lead">A dimension usually answers <strong>by what?</strong> A measure usually answers <strong>how much?</strong> This is one of the most important mental models in Tableau.</p>
+        <div class="field-role-equation">
+          <div><span>Measure</span><strong>Match_Attendance</strong><p>The value being analysed.</p></div>
+          <b>by</b>
+          <div><span>Dimension</span><strong>Competition</strong><p>The grouping structure.</p></div>
+          <b>=</b>
+          <div><span>View</span><strong>Attendance by competition</strong><p>A question-led visual answer.</p></div>
+        </div>
+        <div class="field-role-equation">
+          <div><span>Measure</span><strong>Ticket_Revenue</strong><p>The commercial value.</p></div>
+          <b>by</b>
+          <div><span>Dimension</span><strong>Ticket_Category</strong><p>The comparison groups.</p></div>
+          <b>=</b>
+          <div><span>View</span><strong>Revenue by ticket category</strong><p>Useful for pricing and packaging.</p></div>
+        </div>
+        <section class="activity">
+          <h3>Full test — Dimension, Measure or Depends?</h3>
+          <p>Classify every field by analytical role. Use <strong>Depends</strong> only when the role changes with the analytical question or aggregation needs special care. Say your answer first, then click that field to reveal the recommendation and why.</p>
+          <div class="chat-instruction">
+            <span>Your task · 5 min · individual then chat</span>
+            <p>Work through the full field list. Then type one obvious Dimension, one obvious Measure and one field where <strong>Depends</strong> is defensible.</p>
+          </div>
+          <div class="role-reveal-grid" aria-label="Fields to classify by analytical role">
+            <details class="role-reveal-card"><summary>Match_ID</summary><span>Dimension</span><p>It identifies a match; aggregating it has no meaning.</p></details>
+            <details class="role-reveal-card"><summary>Match_Code</summary><span>Dimension</span><p>It looks numeric, but it is an identifier rather than a quantity.</p></details>
+            <details class="role-reveal-card"><summary>Club</summary><span>Dimension</span><p>It groups rows by club.</p></details>
+            <details class="role-reveal-card"><summary>Opponent</summary><span>Dimension</span><p>It creates opponent comparison groups.</p></details>
+            <details class="role-reveal-card"><summary>Competition</summary><span>Dimension</span><p>It groups fixtures by competition.</p></details>
+            <details class="role-reveal-card"><summary>Season</summary><span>Dimension</span><p>It is a season grouping label.</p></details>
+            <details class="role-reveal-card"><summary>Match_Date</summary><span>Depends</span><p>It is a time dimension, but it can behave as discrete headers or as a continuous axis.</p></details>
+            <details class="role-reveal-card"><summary>Kickoff_Time</summary><span>Dimension</span><p>It usually groups matches by time slot.</p></details>
+            <details class="role-reveal-card"><summary>Day_Type</summary><span>Dimension</span><p>It separates weekday and weekend categories.</p></details>
+            <details class="role-reveal-card"><summary>Stadium</summary><span>Dimension</span><p>It creates venue groups.</p></details>
+            <details class="role-reveal-card"><summary>Stadium_Code</summary><span>Dimension</span><p>It is an identifier, not a quantity to sum.</p></details>
+            <details class="role-reveal-card"><summary>City</summary><span>Dimension</span><p>It groups locations and can receive a City geographic role.</p></details>
+            <details class="role-reveal-card"><summary>Country</summary><span>Dimension</span><p>It groups locations and can receive a Country/Region geographic role.</p></details>
+            <details class="role-reveal-card"><summary>Stadium_Capacity</summary><span>Depends</span><p>It is numeric, but it repeats across detailed rows; aggregation must respect the grain.</p></details>
+            <details class="role-reveal-card"><summary>Match_Attendance</summary><span>Depends</span><p>It behaves like a measure, but repeated match values can be double-counted at this row grain.</p></details>
+            <details class="role-reveal-card"><summary>Occupancy_Rate</summary><span>Depends</span><p>It is a rate, so averaging or aggregating it requires care.</p></details>
+            <details class="role-reveal-card"><summary>Fan_Segment</summary><span>Dimension</span><p>It creates audience segment groups.</p></details>
+            <details class="role-reveal-card"><summary>Ticket_Category</summary><span>Dimension</span><p>It groups ticket products.</p></details>
+            <details class="role-reveal-card"><summary>Sales_Channel</summary><span>Dimension</span><p>It groups sales by route to market.</p></details>
+            <details class="role-reveal-card"><summary>Promotion_Type</summary><span>Dimension</span><p>It groups promotion types; blank values may need review.</p></details>
+            <details class="role-reveal-card"><summary>Segment_Tickets_Sold</summary><span>Measure</span><p>It is a count recorded at the row grain.</p></details>
+            <details class="role-reveal-card"><summary>Average_Ticket_Price</summary><span>Depends</span><p>It is numeric, but averaging an existing average must match the question and weighting.</p></details>
+            <details class="role-reveal-card"><summary>Ticket_Revenue</summary><span>Measure</span><p>It is additive revenue at the row grain.</p></details>
+            <details class="role-reveal-card"><summary>Merchandise_Revenue</summary><span>Measure</span><p>It is an additive revenue component.</p></details>
+            <details class="role-reveal-card"><summary>Food_Beverage_Revenue</summary><span>Measure</span><p>It is an additive revenue component.</p></details>
+            <details class="role-reveal-card"><summary>Total_Matchday_Revenue</summary><span>Measure</span><p>It is the commercial total recorded at the row grain; still check for repetition.</p></details>
+            <details class="role-reveal-card"><summary>Weather</summary><span>Dimension</span><p>It is a contextual category for comparison.</p></details>
+            <details class="role-reveal-card"><summary>Team_Form_Index</summary><span>Depends</span><p>It can be analysed numerically or converted into bands for categorical comparison.</p></details>
+            <details class="role-reveal-card"><summary>Opponent_Strength</summary><span>Depends</span><p>It can be analysed numerically or segmented into strength bands.</p></details>
+            <details class="role-reveal-card"><summary>Result</summary><span>Dimension</span><p>It groups matches by outcome.</p></details>
+            <details class="role-reveal-card"><summary>Social_Engagement</summary><span>Measure</span><p>It is an engagement count.</p></details>
+            <details class="role-reveal-card"><summary>New_Followers</summary><span>Measure</span><p>It is a follower count.</p></details>
+            <details class="role-reveal-card"><summary>Sponsor_Impressions</summary><span>Measure</span><p>It is an impression count.</p></details>
+            <details class="role-reveal-card"><summary>Renewal_Rate</summary><span>Depends</span><p>It is a rate; the correct aggregation depends on the analytical question.</p></details>
+            <details class="role-reveal-card"><summary>Derby_Match</summary><span>Dimension</span><p>It creates True/False comparison groups.</p></details>
+          </div>
+        </section>
+        <div class="bridge-statement">
+          <span>Concept connection</span>
+          <p>We now understand analytical role. Next, Tableau needs to decide how that field behaves visually in the view: discrete or continuous.</p>
+        </div>
+        <section class="activity">
+          <h3>Discrete and continuous are about visual behaviour</h3>
+          <div class="discrete-continuous-grid">
+            <article>
+              <span>Blue / discrete</span>
+              <strong>Creates headers or distinct values</strong>
+              <div class="pill-preview discrete"><b>Jan</b><b>Feb</b><b>Mar</b><b>Apr</b></div>
+              <p>Use this when you want separate categories or month headers.</p>
+            </article>
+            <article>
+              <span>Green / continuous</span>
+              <strong>Creates an axis or continuous range</strong>
+              <div class="axis-preview" aria-hidden="true"><i></i></div>
+              <p>Use this when you want a continuous timeline or numeric scale.</p>
+            </article>
+            <article>
+              <span>Same field, different behaviour</span>
+              <strong>`Match_Date` can be either</strong>
+              <p>Discrete month headers answer a grouped question. A continuous date axis supports a trend question.</p>
+            </article>
+          </div>
+          <div class="card-grid">
+            <section class="knowledge-check" data-quiz>
+              <p><strong>You want a continuous timeline of attendance.</strong></p>
+              <div class="quiz-options"><button data-correct="false" data-feedback="Headers can group dates, but they do not create a continuous time axis.">Discrete</button><button data-correct="true" data-feedback="Correct. A continuous date creates an axis that supports trend reading.">Continuous</button></div>
+              <p class="feedback" aria-live="polite"></p>
+            </section>
+            <section class="knowledge-check" data-quiz>
+              <p><strong>You want separate month headers in a table.</strong></p>
+              <div class="quiz-options"><button data-correct="true" data-feedback="Correct. Discrete dates create separate headers.">Discrete</button><button data-correct="false" data-feedback="A continuous axis is better for trend lines, not separate headers.">Continuous</button></div>
+              <p class="feedback" aria-live="polite"></p>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="phase-divider" aria-label="Learning phase: organise the data">
+      <div class="container"><span class="feature-icon" aria-hidden="true">ORG</span><strong>Organise the Data</strong><p>Turn a raw Data Pane into a workspace students can analyse from.</p></div>
+    </section>
+
+    <section class="container" id="S02-08">
+      <p class="eyebrow">S02-08 · Organise the Data Pane</p>
+      <h2>Organise before you analyse</h2>
+      <p class="lead">A large dataset can quickly become difficult to navigate. Tableau gives us several ways to make the Data Pane easier to understand and more useful analytically.</p>
+      <div class="organise-map" aria-label="Data Pane organisation mental model">
+        <article><span class="feature-icon" aria-hidden="true">FD</span><strong>Organise fields</strong><p>Folders</p></article>
+        <article><span class="feature-icon" aria-hidden="true">HI</span><strong>Create drill paths</strong><p>Hierarchies</p></article>
+        <article><span class="feature-icon" aria-hidden="true">GR</span><strong>Combine categories</strong><p>Groups</p></article>
+        <article><span class="feature-icon" aria-hidden="true">IN</span><strong>Define membership</strong><p>Sets</p></article>
+        <article><span class="feature-icon" aria-hidden="true">BN</span><strong>Create numeric ranges</strong><p>Bins</p></article>
+      </div>
+      <div class="feature-deep-dive">
+        <article>
+          <h3><span class="concept-icon" aria-hidden="true">FD</span>Folders</h3>
+          <p><strong>What is it?</strong> A folder organises related fields inside the Data Pane. It does not change the underlying CSV.</p>
+          <p><strong>When to use it:</strong> many fields, recurring analysis, related fields and faster navigation.</p>
+          <details class="demo-watch"><summary><span>Watch me demo</span><strong>Build a Ticketing folder</strong><em>Click to follow the instructor steps</em></summary><div><p><b>Why this example:</b> price, tickets, revenue and sales-channel fields answer one commercial question but are scattered through the Data Pane.</p><ol><li>In the Data Pane menu, select <b>Group by Folder</b> if the pane is currently grouped by data source.</li><li>Cmd/Ctrl-click <code>Ticket_Category</code>, <code>Sales_Channel</code>, <code>Promotion_Type</code>, <code>Segment_Tickets_Sold</code>, <code>Average_Ticket_Price</code> and <code>Ticket_Revenue</code>.</li><li>Right-click one selected field and choose <b>Folders → Create Folder</b>.</li><li>Name it <code>Ticketing</code> and confirm.</li><li>Collapse the folder, then expand it again to prove all six fields are inside.</li><li>Search for <code>Ticket_Revenue</code> and confirm the field still works exactly as before.</li></ol><p class="demo-check"><strong>Demo checkpoint:</strong> six fields are easier to find; no values, roles or calculations have changed.</p></div></details>
+          <ol class="micro-stepper">
+            <li><span>01</span>Select related fields.</li>
+            <li><span>02</span>Create or move to folder.</li>
+            <li><span>03</span>Name the folder clearly.</li>
+            <li><span>04</span>Verify the fields are easier to find.</li>
+          </ol>
+          <p class="small-note"><strong>What changes?</strong> The Data Pane becomes organised. The data itself does not change.</p>
+        </article>
+        <article>
+          <h3><span class="concept-icon" aria-hidden="true">HI</span>Hierarchies</h3>
+          <p><strong>What is it?</strong> A hierarchy defines a logical drill path between related dimensions.</p>
+          <div class="mini-flow"><span>Country</span><b>→</b><span>City</span><b>→</b><span>Stadium</span></div>
+          <p><strong>Why?</strong> Users often move from a high-level view to more detail. A hierarchy supports that navigation without merging values.</p>
+          <details class="demo-watch"><summary><span>Watch me demo</span><strong>Create a Geography drill path</strong><em>Click to follow the instructor steps</em></summary><div><p><b>Business question:</b> Which country contains the strongest matchday markets, and which city and stadium explain the result?</p><ol><li>Find <code>Country</code>, <code>City</code> and <code>Stadium</code> in the Data Pane.</li><li>Right-click <code>Country</code> and choose <b>Hierarchy → Create Hierarchy</b>.</li><li>Name it <code>Geography</code>.</li><li>Drag <code>City</code> into the hierarchy below Country.</li><li>Drag <code>Stadium</code> below City.</li><li>Drag the Geography hierarchy to Rows and place <code>SUM(Total_Matchday_Revenue)</code> on Columns.</li><li>Click the <b>+</b> beside Country to reveal City, then click <b>+</b> again to reveal Stadium.</li><li>Use <b>−</b> to return to the country view.</li></ol><p class="demo-check"><strong>Demo checkpoint:</strong> the order is Country → City → Stadium, and drill-down changes the displayed level rather than combining the three fields.</p></div></details>
+          <ol class="micro-stepper">
+            <li><span>01</span>Select or drag related dimensions.</li>
+            <li><span>02</span>Create hierarchy.</li>
+            <li><span>03</span>Name it.</li>
+            <li><span>04</span>Order fields from broad to detailed.</li>
+          </ol>
+        </article>
+        <article>
+          <h3><span class="concept-icon" aria-hidden="true">GR</span>Groups</h3>
+          <p><strong>What is it?</strong> A group manually combines members of a dimension into new business-friendly categories.</p>
+          <div class="before-after">
+            <div><span>Before</span><p>Student · Family · Season Ticket Holder · Away Supporter · Corporate · Occasional Fan</p></div>
+            <b>→</b>
+            <div><span>After</span><p>Home &amp; Community · Other Audiences</p></div>
+          </div>
+          <p><strong>Use groups when:</strong> you want to simplify categories, combine equivalent values or compare broader segments.</p>
+          <p><strong>Do not use groups when:</strong> you are hiding inconvenient values or need a dynamic rule. That is usually a Set problem.</p>
+          <details class="demo-watch"><summary><span>Watch me demo</span><strong>Create two audience families</strong><em>Click to follow the instructor steps</em></summary><div><p><b>Business question:</b> Do community-oriented audiences behave differently from the remaining customer segments?</p><ol><li>Right-click <code>Fan_Segment</code> and choose <b>Create → Group</b>.</li><li>Select Student, Family and Season Ticket Holder.</li><li>Click <b>Group</b> and rename the member <code>Home &amp; Community</code>.</li><li>Select Away Supporter, Corporate and Occasional Fan.</li><li>Click <b>Group</b> and rename it <code>Other Audiences</code>.</li><li>Name the generated field <code>Fan Segment Group</code> and click OK.</li><li>Build a bar chart with the new group on Rows and <code>SUM(Ticket_Revenue)</code> on Columns.</li><li>Replace it briefly with the original <code>Fan_Segment</code> to show the difference between six detailed members and two grouped categories.</li></ol><p class="demo-check"><strong>Demo checkpoint:</strong> all six original values belong to exactly one of the two groups, and the original field still exists.</p></div></details>
+          <ol class="micro-stepper">
+            <li><span>01</span>Locate the dimension.</li>
+            <li><span>02</span>Select members.</li>
+            <li><span>03</span>Create Group.</li>
+            <li><span>04</span>Rename the grouped field and categories.</li>
+            <li><span>05</span>Use the new grouped field in the view.</li>
+          </ol>
+          <p class="watch-out"><strong>Common beginner mistake:</strong> creating a group but continuing to use the original field.</p>
+        </article>
+        <article>
+          <h3><span class="concept-icon" aria-hidden="true">IN</span>Sets</h3>
+          <p><strong>What is it?</strong> A set defines whether each member is IN or OUT.</p>
+          <div class="mini-flow"><span>Top 5 fixtures by revenue</span><b>→</b><span>IN</span><b>/</b><span>OUT</span></div>
+          <p><strong>Group asks:</strong> how should these categories be combined?</p>
+          <p><strong>Set asks:</strong> does this member belong to this subset?</p>
+          <details class="demo-watch"><summary><span>Watch me demo</span><strong>Top 5 fixtures versus all others</strong><em>Click to follow the instructor steps</em></summary><div><p><b>Business question:</b> How much of ticket revenue comes from the five strongest fixtures rather than from the rest of the schedule?</p><div class="demo-troubleshoot"><strong>Before creating the set</strong><p>Find <code>Ticket_Revenue</code>. Its icon must be numeric and the field must behave as a measure. If the Top dialog offers only Count, Count Distinct, Minimum and Maximum, Tableau has read it as text.</p></div><ol><li>Check the icon beside <code>Ticket_Revenue</code>. If it shows <b>Abc</b>, right-click the field and choose <b>Change Data Type → Number (decimal)</b>.</li><li>If the numeric field remains under Dimensions, right-click it and choose <b>Convert to Measure</b>.</li><li>Drag <code>Ticket_Revenue</code> temporarily to Text and confirm Tableau displays <code>SUM(Ticket_Revenue)</code>. Undo or remove the pill after checking.</li><li>Right-click <code>Match_ID</code> and choose <b>Create → Set</b>.</li><li>Open the <b>Top</b> tab and select <b>By field</b>.</li><li>Choose <b>Top</b>, enter <b>5</b>, select <code>Ticket_Revenue</code> and choose <b>Sum</b> in the final dropdown.</li><li>Name the set <code>Top 5 Fixtures by Ticket Revenue</code> and click OK.</li><li>Drag the set to Rows and <code>SUM(Ticket_Revenue)</code> to Columns.</li><li>Read the two resulting members: <b>IN</b> contains the Top 5; <b>OUT</b> contains every other Match_ID.</li><li>Add <code>Match_ID</code> to Detail and inspect which fixtures currently qualify.</li></ol><p class="demo-check"><strong>Demo checkpoint:</strong> the aggregation dropdown includes Sum, and the output is an IN/OUT comparison—not a new category label for every fixture.</p></div></details>
+          <div class="data-pane-habits compact">
+            <article><span>Manual set</span><strong>Selected members</strong><p>Selected competitions.</p></article>
+            <article><span>Condition set</span><strong>Rule-based</strong><p>Matches with attendance above a threshold.</p></article>
+            <article><span>Top N set</span><strong>Rank-based</strong><p>Top 5 fixtures by Ticket_Revenue.</p></article>
+          </div>
+        </article>
+        <article>
+          <h3><span class="concept-icon" aria-hidden="true">BN</span>Bins</h3>
+          <p><strong>What is it?</strong> A bin turns a continuous numeric field into ranges. Tableau creates a new binned field; the original measure remains unchanged.</p>
+          <div class="mini-flow"><span>Attendance</span><b>→</b><span>0-10K</span><span>10-20K</span><span>20-30K</span></div>
+          <p><strong>Why it matters:</strong> bins help analyse distributions. Instead of asking the attendance of each match, we ask which attendance range appears most often.</p>
+          <details class="demo-watch"><summary><span>Watch me demo</span><strong>Create 5,000-person attendance bands</strong><em>Click to follow the instructor steps</em></summary><div><p><b>Business question:</b> Are fixtures concentrated in a typical attendance range, or spread across low- and high-demand bands?</p><ol><li>Confirm <code>Match_Attendance</code> is numeric.</li><li>Right-click it and choose <b>Create → Bins</b>.</li><li>Enter <code>5000</code> as the bin size.</li><li>Name the generated field <code>Attendance (5K bins)</code>.</li><li>Drag the new bin field to Columns.</li><li>Drag <code>Match_ID</code> to Rows and change it to <b>COUNTD</b>.</li><li>Set Marks to Bar and sort the ranges in ascending order.</li><li>Hover over a bar and explain that a 30,000 label represents a range beginning at 30,000—not exactly 30,000 attendees.</li></ol><p class="demo-check"><strong>Demo checkpoint:</strong> the original attendance measure remains available and the new field describes numeric ranges.</p></div></details>
+          <ol class="micro-stepper">
+            <li><span>01</span>Right-click a numeric measure.</li>
+            <li><span>02</span>Create → Bins.</li>
+            <li><span>03</span>Choose bin size.</li>
+            <li><span>04</span>Name the generated field.</li>
+            <li><span>05</span>Use the bin field in the view.</li>
+          </ol>
+          <p class="small-note"><strong>Bin size matters:</strong> smaller bins show detail; larger bins summarise.</p>
+        </article>
+      </div>
+      <div class="decision-aid">
+        <h3>What do you need?</h3>
+        <div>
+          <span>Combine categories? <strong>Group</strong></span>
+          <span>Define IN vs OUT? <strong>Set</strong></span>
+          <span>Create numeric ranges? <strong>Bin</strong></span>
+          <span>Create a drill path? <strong>Hierarchy</strong></span>
+          <span>Organise fields? <strong>Folder</strong></span>
+        </div>
+      </div>
+      <section class="activity data-pane-practice">
+        <h3>Hands-on — folders and hierarchy</h3>
+        <ol class="activity-steps fixed-stepper">
+          <li><span>01</span><strong>Create folders</strong><p>Use: Match, Geography, Venue, Ticketing, Commercial, Fan, Digital, Performance.</p></li>
+          <li><span>02</span><strong>Move every field</strong><p>Use the reveal below to compare against the recommended structure after you try.</p></li>
+          <li><span>03</span><strong>Create hierarchies</strong><p>Geography: Country → City → Stadium. Time: Season → Match_Date.</p></li>
+          <li><span>04</span><strong>Checkpoint</strong><p>Type <strong>DONE</strong> when the whole Data Pane is easier to scan.</p></li>
+        </ol>
+        <details class="recommendation-panel"><summary>Show recommended folder structure</summary>
+          <div class="table-scroll" role="region" aria-label="Recommended Tableau folders" tabindex="0">
+            <table class="compact-table dataset-preview recommendation-table">
+              <thead><tr><th>Folder</th><th>Fields</th></tr></thead>
+              <tbody>
+                <tr><td><span class="recommendation-chip">Match</span></td><td>Match_ID, Match_Code, Club, Opponent, Competition, Season, Match_Date, Kickoff_Time, Day_Type, Result, Derby_Match</td></tr>
+                <tr><td><span class="recommendation-chip">Geography</span></td><td>Country, City</td></tr>
+                <tr><td><span class="recommendation-chip">Venue</span></td><td>Stadium, Stadium_Code, Stadium_Capacity, Match_Attendance, Occupancy_Rate</td></tr>
+                <tr><td><span class="recommendation-chip">Ticketing</span></td><td>Ticket_Category, Sales_Channel, Promotion_Type, Segment_Tickets_Sold, Average_Ticket_Price, Ticket_Revenue</td></tr>
+                <tr><td><span class="recommendation-chip">Commercial</span></td><td>Merchandise_Revenue, Food_Beverage_Revenue, Total_Matchday_Revenue, Sponsor_Impressions</td></tr>
+                <tr><td><span class="recommendation-chip">Fan</span></td><td>Fan_Segment, Renewal_Rate</td></tr>
+                <tr><td><span class="recommendation-chip">Digital</span></td><td>Social_Engagement, New_Followers</td></tr>
+                <tr><td><span class="recommendation-chip">Performance</span></td><td>Team_Form_Index, Opponent_Strength, Weather</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details class="recommendation-panel"><summary>Show recommended hierarchy structure</summary>
+          <div class="hierarchy-recommendation-grid">
+            <article><span>Geography</span><div class="mini-flow"><strong>Country</strong><b>→</b><strong>City</strong><b>→</b><strong>Stadium</strong></div><p>Use when moving from market context to the specific venue. Keep Stadium last because it is the most detailed level.</p></article>
+            <article><span>Time</span><div class="mini-flow"><strong>Season</strong><b>→</b><strong>Match_Date</strong></div><p>Use for course exercises that begin with season context and then reveal individual fixtures. Tableau's built-in Year/Quarter/Month date drill remains available separately.</p></article>
+          </div>
+          <div class="hierarchy-check"><strong>Before you finish</strong><span>Names describe the drill path</span><span>Fields run broad → detailed</span><span>Each level answers a meaningful next question</span><span>No measure is placed inside the hierarchy</span></div>
+        </details>
+      </section>
+      <section class="activity">
+        <h3>Hands-on — default properties</h3>
+        <p>Default properties save repeated formatting decisions and reduce inconsistency across worksheets.</p>
+        <div class="data-pane-habits">
+          <article><span>Currency</span><strong>Revenue and price fields</strong><p>Average_Ticket_Price, Ticket_Revenue, Merchandise_Revenue, Food_Beverage_Revenue, Total_Matchday_Revenue.</p></article>
+          <article><span>Percent</span><strong>Rate fields</strong><p>Occupancy_Rate and Renewal_Rate.</p></article>
+          <article><span>Whole number</span><strong>Counts and capacity</strong><p>Stadium_Capacity, Match_Attendance, Segment_Tickets_Sold, Social_Engagement, New_Followers, Sponsor_Impressions.</p></article>
+          <article><span>Geography</span><strong>Location roles</strong><p>Country as Country/Region; City as City.</p></article>
+          <article><span>Date</span><strong>Calendar display</strong><p>Match_Date with a clear date format.</p></article>
+          <article><span>Comment</span><strong>Ambiguous fields</strong><p>Document Stadium_Code, Match_Code, Occupancy_Rate and Total_Matchday_Revenue.</p></article>
+        </div>
+        <details class="recommendation-panel"><summary>Show recommended default property plan</summary>
+          <div class="table-scroll" role="region" aria-label="Default property plan" tabindex="0">
+            <table class="compact-table dataset-preview recommendation-table">
+              <thead><tr><th>Field</th><th>Current role</th><th>Property</th><th>Recommended setting</th><th>Why</th></tr></thead>
+              <tbody>
+                <tr><td>Ticket_Revenue</td><td><span class="recommendation-chip">Measure</span></td><td>Number format</td><td>Currency</td><td>Commercial reporting.</td></tr>
+                <tr><td>Average_Ticket_Price</td><td><span class="recommendation-chip">Measure</span></td><td>Number format</td><td>Currency</td><td>Price metric.</td></tr>
+                <tr><td>Merchandise_Revenue</td><td><span class="recommendation-chip">Measure</span></td><td>Number format</td><td>Currency</td><td>Revenue component.</td></tr>
+                <tr><td>Food_Beverage_Revenue</td><td><span class="recommendation-chip">Measure</span></td><td>Number format</td><td>Currency</td><td>Revenue component.</td></tr>
+                <tr><td>Total_Matchday_Revenue</td><td><span class="recommendation-chip">Measure</span></td><td>Number format + comment</td><td>Currency</td><td>Total value students will reuse.</td></tr>
+                <tr><td>Occupancy_Rate</td><td><span class="recommendation-chip">Measure</span></td><td>Number format + comment</td><td>Percentage</td><td>Rate; aggregation needs care.</td></tr>
+                <tr><td>Renewal_Rate</td><td><span class="recommendation-chip">Measure</span></td><td>Number format</td><td>Percentage</td><td>Fan retention metric.</td></tr>
+                <tr><td>Match_Attendance</td><td><span class="recommendation-chip">Measure</span></td><td>Number format</td><td>Whole number</td><td>Attendance count.</td></tr>
+                <tr><td>Stadium_Capacity</td><td><span class="recommendation-chip">Measure / repeated field</span></td><td>Number format</td><td>Whole number</td><td>Capacity count repeated by grain.</td></tr>
+                <tr><td>City</td><td><span class="recommendation-chip">Dimension</span></td><td>Geographic role</td><td>City</td><td>Supports maps.</td></tr>
+                <tr><td>Country</td><td><span class="recommendation-chip">Dimension</span></td><td>Geographic role</td><td>Country/Region</td><td>Supports maps.</td></tr>
+                <tr><td>Match_Date</td><td><span class="recommendation-chip">Date</span></td><td>Date format</td><td>Readable date</td><td>Supports timelines.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+      <section class="activity">
+        <h3>Hands-on — groups, sets and bins</h3>
+        <div class="gsb-workflows">
+          <article>
+            <span class="feature-icon" aria-hidden="true">GR</span>
+            <h4>Create a Group</h4>
+            <ol class="micro-stepper">
+              <li><span>01</span>Right-click the dimension.</li>
+              <li><span>02</span>Select members.</li>
+              <li><span>03</span>Create Group.</li>
+              <li><span>04</span>Rename the generated field.</li>
+              <li><span>05</span>Use the grouped field, not the original.</li>
+            </ol>
+          </article>
+          <article>
+            <span class="feature-icon" aria-hidden="true">IN</span>
+            <h4>Create a Set</h4>
+            <ol class="micro-stepper">
+              <li><span>01</span>Right-click the dimension.</li>
+              <li><span>02</span>Create → Set.</li>
+              <li><span>03</span>Choose manual, condition or Top N.</li>
+              <li><span>04</span>Name the rule clearly.</li>
+              <li><span>05</span>Use IN / OUT in the view.</li>
+            </ol>
+          </article>
+          <article>
+            <span class="feature-icon" aria-hidden="true">BN</span>
+            <h4>Create a Bin</h4>
+            <ol class="micro-stepper">
+              <li><span>01</span>Right-click a numeric measure.</li>
+              <li><span>02</span>Create → Bins.</li>
+              <li><span>03</span>Choose the bin size.</li>
+              <li><span>04</span>Name the generated field.</li>
+              <li><span>05</span>Use it to analyse distribution.</li>
+            </ol>
+          </article>
+        </div>
+        <div class="tool-task-sections">
+          <section>
+            <h4>Groups · combine categories</h4>
+            <div class="tool-preview-grid gsb-task-grid">
+              <details class="gsb-task-card"><summary><span>Group 01</span><strong>Fan segment group</strong><p><b>Task:</b> Home &amp; Community = Student + Family + Season Ticket Holder; Other Audiences = Away Supporter + Corporate + Occasional Fan.</p><em>Click for steps</em></summary><div><b>How to create it</b><ol><li>Right-click `Fan_Segment` in the Data Pane.</li><li>Choose Create → Group.</li><li>Select Student, Family and Season Ticket Holder; click Group and rename it `Home &amp; Community`.</li><li>Select Away Supporter, Corporate and Occasional Fan; click Group and rename it `Other Audiences`.</li><li>Rename the generated field `Fan Segment Group` and click OK.</li><li>Use the new grouped field in a view and confirm that all six original values are represented.</li></ol><p><strong>Why:</strong> Compare two broad audience families without changing the original field.</p></div></details>
+              <details class="gsb-task-card"><summary><span>Group 02</span><strong>Ticket category group</strong><p><b>Task:</b> Accessible = General Admission + Student + Family Pack; Premium Experience = Premium + Hospitality; Away End remains separate.</p><em>Click for steps</em></summary><div><b>How to create it</b><ol><li>Right-click `Ticket_Category` and choose Create → Group.</li><li>Select General Admission, Student and Family Pack; click Group and rename it `Accessible`.</li><li>Select Premium and Hospitality; click Group and rename it `Premium Experience`.</li><li>Leave Away End as its own category.</li><li>Rename the generated field `Ticket Category Group` and click OK.</li><li>Check the grouped field contains Accessible, Premium Experience and Away End.</li></ol><p><strong>Why:</strong> Compare mainstream, premium and away-ticket products using categories that actually exist.</p></div></details>
+              <details class="gsb-task-card"><summary><span>Group 03</span><strong>Competition group</strong><p><b>Task:</b> Domestic Core = League + Cup; keep European and Friendly separate.</p><em>Click for steps</em></summary><div><b>How to create it</b><ol><li>Right-click `Competition` and choose Create → Group.</li><li>Select League and Cup; click Group.</li><li>Rename that group `Domestic Core`.</li><li>Leave European and Friendly ungrouped so they remain visible as separate members.</li><li>Rename the generated field `Competition Group` and click OK.</li><li>Use it in a bar view and check the three resulting categories.</li></ol><p><strong>Why:</strong> Combine the two core domestic competitions without incorrectly labelling Friendly or European fixtures.</p></div></details>
+            </div>
+          </section>
+          <section>
+            <h4>Sets · define IN / OUT membership</h4>
+            <div class="tool-preview-grid gsb-task-grid">
+              <details class="gsb-task-card"><summary><span>Set 01</span><strong>Top fixtures</strong><p><b>Task:</b> Top 5 Match_ID values by SUM(Ticket_Revenue).</p><em>Click for steps</em></summary><div><b>How to create it</b><ol><li>Confirm <code>Ticket_Revenue</code> has a numeric icon. If it shows <b>Abc</b>, use <b>Change Data Type → Number (decimal)</b>.</li><li>If necessary, right-click <code>Ticket_Revenue</code> and choose <b>Convert to Measure</b>.</li><li>Right-click <code>Match_ID</code> and choose <b>Create → Set</b>.</li><li>Open the Top tab and select <b>By field</b>.</li><li>Choose Top 5 by <b>Sum</b> of <code>Ticket_Revenue</code>.</li><li>Name it <code>Top 5 Fixtures by Ticket Revenue</code> and click OK.</li><li>Drag the set into the view to compare IN with OUT.</li></ol><p><strong>If Sum is missing:</strong> cancel the dialog and correct the Ticket Revenue data type first. Do not use Count as a substitute: that would rank fixtures by number of rows, not by revenue.</p><p><strong>Why:</strong> Identify the five match identifiers generating the most ticket revenue across their detailed rows.</p></div></details>
+              <details class="gsb-task-card"><summary><span>Set 02</span><strong>High-attendance fixtures</strong><p><b>Task:</b> Match_ID values where MAX(Match_Attendance) is at least 45,000.</p><em>Click for steps</em></summary><div><b>How to create it</b><ol><li>Right-click `Match_ID` and choose Create → Set.</li><li>Open the Condition tab.</li><li>Select By field.</li><li>Choose Maximum of `Match_Attendance` and set the condition to ≥ 45000.</li><li>Name it `High Attendance Fixtures` and click OK.</li><li>Use IN/OUT to compare high-demand fixtures with the rest.</li></ol><p><strong>Why:</strong> The CSV ranges from 19,700 to 58,900 attendance. MAX avoids multiplying the repeated match-level attendance across detailed rows.</p></div></details>
+              <details class="gsb-task-card"><summary><span>Set 03</span><strong>Selected competitions</strong><p><b>Task:</b> League and Cup as IN; European and Friendly as OUT.</p><em>Click for steps</em></summary><div><b>How to create it</b><ol><li>Right-click `Competition` and choose Create → Set.</li><li>Stay on the General tab.</li><li>Select League and Cup.</li><li>Name the set `League and Cup` and click OK.</li><li>Drag the set to Colour or Rows.</li><li>Confirm League and Cup appear as IN, while European and Friendly appear as OUT.</li></ol><p><strong>Why:</strong> Compare selected domestic competitions with every other competition value in the file.</p></div></details>
+            </div>
+          </section>
+          <section>
+            <h4>Bins · create numeric ranges</h4>
+            <div class="tool-preview-grid gsb-task-grid">
+              <details class="gsb-task-card"><summary><span>Bin 01</span><strong>Attendance ranges</strong><p><b>Task:</b> Create 5,000-person Match_Attendance bins.</p><em>Click for steps</em></summary><div><b>How to create it</b><ol><li>Confirm `Match_Attendance` is a numeric measure.</li><li>Right-click it and choose Create → Bins.</li><li>Set Size of bins to `5000`.</li><li>Name the field `Attendance (5K bins)` and click OK.</li><li>Drag the bin field to Columns and Number of Records to Rows.</li><li>Read which attendance ranges occur most often, remembering that attendance repeats at the dataset grain.</li></ol><p><strong>Why:</strong> The real values run from 19,700 to 58,900, so 5,000-person bands produce interpretable crowd-size ranges.</p></div></details>
+              <details class="gsb-task-card"><summary><span>Bin 02</span><strong>Ticket price ranges</strong><p><b>Task:</b> Create €25 Average_Ticket_Price bins.</p><em>Click for steps</em></summary><div><b>How to create it</b><ol><li>Confirm `Average_Ticket_Price` is numeric and formatted as currency.</li><li>Right-click it and choose Create → Bins.</li><li>Set Size of bins to `25`.</li><li>Name the field `Ticket Price (€25 bins)` and click OK.</li><li>Build a distribution using the new bin field.</li><li>Check how prices between €9.09 and €207.96 are distributed.</li></ol><p><strong>Why:</strong> €25 bands summarise the actual price range without inventing categories absent from the file.</p></div></details>
+              <details class="gsb-task-card"><summary><span>Bin 03</span><strong>Revenue ranges</strong><p><b>Task:</b> Create €50,000 Total_Matchday_Revenue bins.</p><em>Click for steps</em></summary><div><b>How to create it</b><ol><li>Confirm `Total_Matchday_Revenue` is numeric and formatted as currency.</li><li>Right-click it and choose Create → Bins.</li><li>Set Size of bins to `50000`.</li><li>Name the field `Matchday Revenue (€50K bins)` and click OK.</li><li>Use the new bin field to build a distribution.</li><li>Inspect the long range from roughly €1.4K to €603.8K and look for sparse high-value bands.</li></ol><p><strong>Why:</strong> The larger bin size matches the much wider revenue range in the real CSV.</p></div></details>
+            </div>
+          </section>
+        </div>
+        <div class="chat-instruction">
+          <span>Your task · 8 min · Tableau + chat</span>
+          <p>Create at least one group, one set and one bin now. Use the rest as take-home completion. Type the one that felt most useful and why.</p>
+        </div>
+      </section>
+      <div class="table-scroll recommendation-panel" role="region" aria-label="Groups sets and bins comparison" tabindex="0">
+        <table class="compact-table dataset-preview recommendation-table">
+          <thead><tr><th>Tool</th><th>Purpose</th><th>Works with</th><th>Creates</th><th>Typical output</th><th>Sport Business example</th></tr></thead>
+          <tbody>
+            <tr><td><span class="recommendation-chip">Group</span></td><td>Combine categories</td><td>Dimension members</td><td>New grouped dimension</td><td>Home &amp; Community vs Other Audiences</td><td>Student + Family + Season Ticket Holder = Home &amp; Community</td></tr>
+            <tr><td><span class="recommendation-chip">Set</span></td><td>Define membership</td><td>Dimension members + rules</td><td>IN / OUT field</td><td>Top 5 vs Other</td><td>Top 5 fixtures by ticket revenue</td></tr>
+            <tr><td><span class="recommendation-chip">Bin</span></td><td>Create numeric ranges</td><td>Continuous numeric fields</td><td>New binned field</td><td>0-10K / 10-20K</td><td>Attendance bands for distribution</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="phase-divider light" aria-label="Learning phase: build with the data">
+      <div class="container"><span class="feature-icon" aria-hidden="true">VIZ</span><strong>Build With the Data</strong><p>Use the organised fields to create a first question-led Tableau view.</p></div>
+    </section>
+
+    <section class="section-band" id="S02-09">
+      <div class="container">
+        <p class="eyebrow">S02-09 · Workspace key areas</p>
+        <h2>Understand where building happens</h2>
+        <p class="lead">The data is organised. Now we need to understand the workspace where fields become visual structure.</p>
+        <figure class="tableau-interface-figure workspace-interface-figure">
+          <img src="../../assets/screenshots/session-02/tableau-worksheet-workspace.png" alt="Tableau Public worksheet workspace showing the Data Pane, shelves, Marks card, canvas, Show Me panel and worksheet tabs" loading="lazy">
+          <figcaption><strong>Orient yourself before building.</strong> Fields start in the Data Pane on the left. Rows, Columns and Filters define structure; the Marks card controls visual encoding; the central canvas shows the view; Show Me suggests chart types; and the bottom tabs move between the data source and worksheets.</figcaption>
+        </figure>
+        <div class="workspace-map">
+          <div class="workspace-zone data-pane"><span>Data Pane</span><strong>Fields live here</strong><p>Search, organise, drag, inspect, create folders, change properties and create calculated fields later.</p></div>
+          <div class="workspace-zone shelves"><span>Rows + Columns + Filters</span><strong>Structure</strong><p>Rows and Columns define the main layout. Filters control what data is included in the view.</p></div>
+          <div class="workspace-zone canvas"><span>Canvas / View</span><strong>What Tableau draws</strong><p>The analytical result of fields, shelves, filters, marks and aggregation.</p></div>
+          <div class="workspace-zone marks"><span>Cards</span><strong>Visual encoding</strong><p>Marks controls colour, size, label, detail, tooltip and shape. This connects directly to Session 1 visual attention.</p></div>
+          <div class="workspace-zone tabs-zone"><span>Toolbar + Tabs</span><strong>Navigation and workflow</strong><p>Undo, redo, save, sort, swap, fit, worksheets, dashboards, stories and Data Source tabs.</p></div>
+        </div>
+        <section class="activity">
+          <h3>Workspace tour — click, read, apply</h3>
+          <details open><summary>Data Pane</summary><p>Use this to find and organise fields before dragging them into a view.</p></details>
+          <details><summary>Shelves</summary><p>Use Rows and Columns to define the visual structure: for example, Competition on Columns and Attendance on Rows.</p></details>
+          <details><summary>Cards</summary><p>Use Marks and Filters to control encoding and what data appears.</p></details>
+          <details><summary>Tabs</summary><p>Use worksheets for individual views, dashboards to combine views and stories to sequence views later in the course.</p></details>
+          <div class="chat-instruction">
+            <span>Quick check · 30 seconds · chat</span>
+            <p>Where would you control colour or size? Where would you put `Competition` to create categories? Type one answer.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="container" id="S02-10">
+      <p class="eyebrow">S02-10 · Show Me and chart types</p>
+      <h2>Show Me is a helper, not an analyst</h2>
+      <p class="lead">Show Me suggests chart types based on selected fields. It can help you build faster, but it does not know your question, audience or decision.</p>
+      <div class="show-me-reference">
+        <article><div class="chart-mini bars" aria-hidden="true"><i></i><i></i><i></i></div><span>Compare categories</span><strong>Bar chart</strong><p>Question: which competition has the highest average attendance? Select `Competition` + `Match_Attendance`.</p></article>
+        <article><div class="chart-mini line" aria-hidden="true"><i></i></div><span>Change over time</span><strong>Line chart</strong><p>Question: how has attendance changed? Select `Match_Date` + `Match_Attendance`.</p></article>
+        <article><div class="chart-mini scatter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><span>Relationship</span><strong>Scatter plot</strong><p>Question: is ticket price related to attendance? Select `Average_Ticket_Price` + `Match_Attendance`.</p></article>
+        <article><div class="chart-mini map" aria-hidden="true"><i></i></div><span>Geography</span><strong>Map</strong><p>Question: where are our strongest markets or venues? Select `City` or `Country`.</p></article>
+        <article><div class="chart-mini histogram" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span>Distribution</span><strong>Histogram / box plot</strong><p>Question: how are attendance values distributed? Use `Match_Attendance` or attendance bins.</p></article>
+        <article><div class="chart-mini treemap" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span>Composition</span><strong>Treemap</strong><p>Question: which categories contribute most to revenue? Select `Ticket_Category` + `Ticket_Revenue`.</p></article>
+      </div>
+      <section class="activity">
+        <h3>Quick checks — choose the first chart to try</h3>
+        <div class="card-grid">
+          <section class="knowledge-check" data-quiz>
+            <p><strong>How has match attendance changed through the season?</strong></p>
+            <div class="quiz-options"><button data-correct="false" data-feedback="Bars can compare categories, but this asks about change over time.">Bar</button><button data-correct="true" data-feedback="Correct. A line is a strong first choice for change over time.">Line</button><button data-correct="false" data-feedback="Scatter is for relationships between two measures.">Scatter</button><button data-correct="false" data-feedback="Treemap is not a good first choice for time change.">Treemap</button></div>
+            <p class="feedback" aria-live="polite"></p>
+          </section>
+          <section class="knowledge-check" data-quiz>
+            <p><strong>Which competition has the highest average attendance?</strong></p>
+            <div class="quiz-options"><button data-correct="true" data-feedback="Correct. Bars support category comparison.">Bar</button><button data-correct="false" data-feedback="Line is stronger for time series.">Line</button><button data-correct="false" data-feedback="Scatter is for two measures.">Scatter</button><button data-correct="false" data-feedback="Map needs a geography question.">Map</button></div>
+            <p class="feedback" aria-live="polite"></p>
+          </section>
+          <section class="knowledge-check" data-quiz>
+            <p><strong>Is ticket price related to match attendance?</strong></p>
+            <div class="quiz-options"><button data-correct="false" data-feedback="Bars compare categories.">Bar</button><button data-correct="false" data-feedback="Line needs a time question.">Line</button><button data-correct="true" data-feedback="Correct. Scatter is a strong first choice for two measures.">Scatter</button><button data-correct="false" data-feedback="Treemap is not designed for relationships.">Treemap</button></div>
+            <p class="feedback" aria-live="polite"></p>
+          </section>
+        </div>
+        <p class="visual-principle">Show Me suggests. You decide. Tableau can react to selected fields, but it cannot know whether the chart answers the business question.</p>
+      </section>
+    </section>
+
+    <section class="section-band" id="S02-11">
+      <div class="container">
+        <p class="eyebrow">S02-11 · Build your first view</p>
+        <h2>Start with the question, then build</h2>
+        <p class="lead">The first view should be simple and meaningful. We are learning how fields become a visual answer.</p>
+        <section class="live-demo-card">
+          <p class="eyebrow">Watch me build · Live Tableau demo</p>
+          <h3>Question: which competitions attract the highest average attendance?</h3>
+          <div class="first-view-grid">
+            <article><span>Question</span><strong>Attendance by competition</strong><p>What does management need to compare?</p></article>
+            <article><span>Dimension</span><strong>Competition</strong><p>Groups the view.</p></article>
+            <article><span>Measure</span><strong>AVG(Match_Attendance)</strong><p>Provides the value; check the aggregation.</p></article>
+            <article><span>View</span><strong>Sorted bar chart</strong><p>Clear comparison across categories.</p></article>
+          </div>
+        </section>
+        <section class="activity hands-on-stepper">
+          <div class="activity-title-row">
+            <div>
+              <p class="eyebrow">Your turn</p>
+              <h3>Build a different first view</h3>
+            </div>
+            <span class="time-badge">6 minutes</span>
+          </div>
+          <div class="student-view-brief">
+            <span>Your question</span>
+            <strong>Which sales channels sell the most tickets?</strong>
+            <p>This is deliberately different from the instructor demo: use <strong>Sales_Channel</strong> as the dimension and <strong>SUM(Segment_Tickets_Sold)</strong> as the measure.</p>
+          </div>
+          <div class="guided-stepper" aria-label="Six minute first view practice steps">
+            <article class="guided-step"><span>01</span><strong>Open a worksheet</strong><p>Use a new blank worksheet.</p></article>
+            <article class="guided-step"><span>02</span><strong>Drag Sales_Channel</strong><p>Use this new dimension to define the comparison groups.</p></article>
+            <article class="guided-step"><span>03</span><strong>Drag Segment_Tickets_Sold</strong><p>Use SUM so the view compares the total number of tickets sold through each channel.</p></article>
+            <article class="guided-step"><span>04</span><strong>Confirm chart</strong><p>Use a bar chart or Show Me if needed.</p></article>
+            <article class="guided-step"><span>05</span><strong>Sort and format</strong><p>Sort descending and format numbers cleanly.</p></article>
+            <article class="guided-step"><span>06</span><strong>Rename sheet</strong><p>Use a meaningful name such as `Tickets Sold by Sales Channel`.</p></article>
+          </div>
+          <div class="chat-instruction">
+            <span>Response · chat</span>
+            <p>Type <strong>DONE</strong> when your view is built. Then answer: which channel leads, and what extra information would you need before recommending more investment in that channel?</p>
+          </div>
+          <details><summary>If Tableau uses a different chart</summary><p>Use Show Me only as support. The correct test is whether the view answers the question clearly.</p></details>
+        </section>
+        <section class="activity data-pane-diagnosis">
+          <p class="eyebrow">Quick diagnosis · 45 seconds</p>
+          <h3>Quick Data Pane Diagnosis</h3>
+          <p>You open a workbook and see these fields. Before building anything, decide what you would inspect first.</p>
+          <div class="table-scroll" role="region" aria-label="Data Pane diagnosis table" tabindex="0">
+            <table class="compact-table dataset-preview diagnosis-table">
+              <thead><tr><th>Field shown</th><th>Possible issue</th><th>Why it deserves inspection</th></tr></thead>
+              <tbody>
+                <tr><td>Match_ID</td><td>Placed as a measure?</td><td>Identifier values should not be summed.</td></tr>
+                <tr><td>Match_Attendance</td><td>Placed as a dimension?</td><td>Attendance usually needs aggregation, with grain awareness.</td></tr>
+                <tr><td>Match_Date</td><td>Imported as text?</td><td>Date fields need calendar behaviour.</td></tr>
+                <tr><td>City</td><td>No geographic role?</td><td>Location fields may need geographic assignment.</td></tr>
+                <tr><td>Ticket_Revenue</td><td>No currency format?</td><td>Financial fields need readable formatting.</td></tr>
+                <tr><td>Occupancy_Rate</td><td>Shown as decimal?</td><td>Rates need percentage formatting and aggregation care.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="chat-instruction">
+            <span>Your task · chat</span>
+            <p>Choose up to <strong>three fields</strong> you would inspect first and type one short reason for each.</p>
+          </div>
+          <details><summary>Reveal the reasoning</summary>
+            <div class="role-classifier">
+              <article><strong>Match_ID</strong><span>Identifier</span><p>Numeric-looking or text identifiers should group records, not become aggregated measures.</p></article>
+              <article><strong>Match_Attendance</strong><span>Likely measure</span><p>If placed as a dimension, Tableau may group values instead of aggregating attendance meaningfully.</p></article>
+              <article><strong>Ticket_Revenue</strong><span>Likely measure</span><p>This is normally a financial value to aggregate, compare or format as currency.</p></article>
+              <article><strong>City</strong><span>Dimension / geography</span><p>City should usually group rows and may need a geographic role.</p></article>
+              <article><strong>Match_Date</strong><span>Date</span><p>A date should be checked as temporal data, not treated like a numeric measure.</p></article>
+              <article><strong>Occupancy_Rate</strong><span>Rate</span><p>A rate needs percentage formatting and careful aggregation.</p></article>
+            </div>
+            <p class="visual-principle">Callback: do not trust default interpretation blindly. Tableau's first classification is a starting point; the analyst checks whether it matches the business meaning.</p>
+          </details>
+        </section>
+      </div>
+    </section>
+
+    <section class="phase-divider" aria-label="Learning phase: publish the work">
+      <div class="container"><span class="feature-icon" aria-hidden="true">PUB</span><strong>Publish the Work</strong><p>Make the workbook public, named correctly and reviewable.</p></div>
+    </section>
+
+    <section class="container" id="S02-12">
+      <p class="eyebrow">S02-12 · Save, publish and make it reviewable</p>
+      <h2>Public work requires public judgement</h2>
+      <p class="lead">You have built a first view. Now save it clearly, publish it to Tableau Public and make sure the workbook remains downloadable for review.</p>
+      <div class="publish-flow">
+        <article><span>01</span><strong>Save locally if available</strong><p>Keep your working file organised before publishing.</p></article>
+        <article><span>02</span><strong>Sign in</strong><p>Use your Tableau Public account.</p></article>
+        <article><span>03</span><strong>Save to Tableau Public</strong><p>Use a clear workbook title.</p></article>
+        <article><span>04</span><strong>Open your profile</strong><p>Confirm the published workbook appears correctly.</p></article>
+      </div>
+      <div class="naming-reminder">
+        <span>Course naming convention</span>
+        <strong>ESBS-DV_S02_YourName</strong>
+        <p>Keep `ESBS-DV` unchanged. Use the correct activity code. Avoid special characters and unnecessary versions.</p>
+        <a class="button secondary" href="../session-01/tableau-public.html#naming" target="_blank" rel="noopener noreferrer">Review naming convention ↗</a>
+      </div>
+      <section class="activity">
+        <h3><span class="concept-icon" aria-hidden="true">DL</span> Important for assessment</h3>
+        <p>Your published workbook must remain downloadable so the instructor can review worksheets, calculations, field setup, structure and implementation.</p>
+        <div class="data-source-flow">
+          <article><span>01</span><strong>Open your published viz</strong><p>Go to the workbook page on Tableau Public.</p></article>
+          <article><span>02</span><strong>Open settings / details</strong><p>Use the controls available from your profile or viz page.</p></article>
+          <article><span>03</span><strong>Check download access</strong><p>Keep workbook and data download enabled for course review.</p></article>
+          <article><span>04</span><strong>Test it</strong><p>Look for the Download option on the published viz.</p></article>
+        </div>
+        <p class="visual-principle">Do not publish confidential data. Do keep course workbook downloads enabled for review.</p>
+      </section>
+      <section class="activity">
+        <h3><span class="concept-icon" aria-hidden="true">OK</span> Publishing checklist</h3>
+        <div class="data-pane-habits">
+          <article><span>Check</span><strong>Correct naming convention</strong><p>`ESBS-DV_S02_YourName`.</p></article>
+          <article><span>Check</span><strong>Workbook published</strong><p>It appears on your Tableau Public profile.</p></article>
+          <article><span>Check</span><strong>Download enabled</strong><p>The instructor can download the workbook for review.</p></article>
+          <article><span>Check</span><strong>Meaningful title</strong><p>The sheet and workbook names explain the work.</p></article>
+          <article><span>Check</span><strong>No confidential data</strong><p>Only use course-provided, public or anonymised data.</p></article>
+        </div>
+      </section>
+    </section>
+
+    <section class="section-band" id="S02-13">
+      <div class="container">
+        <p class="eyebrow">S02-13 · Wrap-up</p>
+        <h2>Today we moved from first launch to reviewable workbook</h2>
+        <div class="takeaway-grid s02-takeaways">
+          <div><span>01</span>You can distinguish Tableau Public from the desktop authoring environment.</div>
+          <div><span>02</span>You can inspect a CSV before Tableau interprets it.</div>
+          <div><span>03</span>You can explain data type, analytical role, dimension/measure and discrete/continuous.</div>
+          <div><span>04</span>You can organise the Data Pane with folders, hierarchy, group, set and bin.</div>
+          <div><span>05</span>You can build, save and publish a first reviewable workbook.</div>
+        </div>
+        <section class="activity">
+          <p class="eyebrow">Take-home practice</p>
+          <h3><span class="concept-icon" aria-hidden="true">HW</span> Complete and publish your Session 2 workbook</h3>
+          <p>Use the same Sport Business dataset. Your goal is to finish the organisation work and create one additional view that answers a different business question.</p>
+          <div class="homework-deadline" role="note">
+            <span>Deadline</span>
+            <p>Complete this work by <strong>Thursday 19 November 2026</strong>, the day before Session 3.</p>
+          </div>
+          <div class="choice-row">
+            <article><span>A</span><strong>Ticket revenue</strong><p>Which competitions generate the highest ticket revenue?</p></article>
+            <article><span>B</span><strong>Attendance over time</strong><p>How does attendance change throughout the season?</p></article>
+            <article><span>C</span><strong>Fan value</strong><p>Which fan segments generate the most matchday value?</p></article>
+          </div>
+          <div class="data-pane-habits">
+            <article><span>Required</span><strong>Correct data types</strong><p>Review every field and fix obvious problems.</p></article>
+            <article><span>Required</span><strong>Folders complete</strong><p>Organise the full Data Pane using the recommended structure.</p></article>
+            <article><span>Required</span><strong>Hierarchies complete</strong><p>Create Geography and Time hierarchies.</p></article>
+            <article><span>Required</span><strong>Default properties applied</strong><p>Currency, percentage, whole-number, date and geographic settings.</p></article>
+            <article><span>Required</span><strong>Group, Set and Bin created</strong><p>Create at least one of each using meaningful fields.</p></article>
+            <article><span>Required</span><strong>Additional view created</strong><p>Choose one business question above and build a titled view.</p></article>
+            <article><span>Required</span><strong>Published workbook</strong><p>Name it `ESBS-DV_S02_YourName` and publish/update it on Tableau Public.</p></article>
+            <article><span>Required</span><strong>Download enabled</strong><p>Keep workbook download enabled so the instructor can review it.</p></article>
+          </div>
+        </section>
+        <div class="kahoot-closing" id="session-2-kahoot">
+          <div>
+            <p class="eyebrow">Let's Kahoot</p>
+            <h2>One final check</h2>
+            <p>Can you recognise what Tableau is doing and make better analytical choices?</p>
+          </div>
+          <div>
+            <p>Focus on:</p>
+            <div class="kahoot-focus-list"><span>Tool choice</span><span>CSV grain</span><span>Data types</span><span>Dimensions</span><span>Measures</span><span>Groups</span><span>Sets</span><span>Bins</span><span>Publishing</span></div>
+            <a class="button" href="https://create.kahoot.it/details/db749b8b-1bf4-4a3c-a7df-671ff0c7325e" target="_blank" rel="noopener noreferrer">Open Session 2 Kahoot ↗</a>
+          </div>
+        </div>
+        <div class="next-session-panel">
+          <div>
+            <p class="eyebrow">Next: Session 3</p>
+            <h3>Visual Encoding and Essential Charts</h3>
+            <p>Now that we can connect data and build a first view, we will focus on choosing and refining the visual forms that best answer different analytical questions.</p>
+          </div>
+          <span class="button publication-unavailable" aria-disabled="true" title="Coming soon">Go to Session 3</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><p>Data Visualisation for Sport Business · Session 2</p></div>
+  </footer>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/course-calendar.js"></script>
+</body>
+</html>
