@@ -160,9 +160,10 @@
   $$('[data-field-reveal-activity]').forEach((activity) => {
     const cards = $$('[data-field-card]', activity);
     const progress = $('[data-field-progress]', activity);
+    const revealNoun = activity.classList.contains('s04-inspection-challenges') ? 'challenges' : 'fields';
     const updateFieldProgress = () => {
       const revealed = cards.filter((card) => card.getAttribute('aria-expanded') === 'true').length;
-      if (progress) progress.textContent = `${revealed} / ${cards.length} fields revealed`;
+      if (progress) progress.textContent = `${revealed} / ${cards.length} ${revealNoun} revealed`;
     };
     cards.forEach((card) => {
       card.addEventListener('click', () => {
