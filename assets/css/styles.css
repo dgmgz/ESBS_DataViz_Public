@@ -5940,6 +5940,129 @@ textarea {
   text-align: left;
 }
 
+.participation-overview-panel {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.participation-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-sm);
+}
+
+.participation-summary article {
+  display: grid;
+  gap: .45rem;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #fff;
+}
+
+.participation-summary span,
+.participation-summary small {
+  color: var(--color-text-muted);
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.participation-summary strong {
+  color: var(--color-primary-dark);
+  font-size: 1.6rem;
+}
+
+.participation-summary-track,
+.participation-stack {
+  overflow: hidden;
+  display: flex;
+  min-height: .75rem;
+  border-radius: 999px;
+  background: #e9f0f2;
+}
+
+.participation-summary-track i {
+  display: block;
+  background: var(--color-primary);
+}
+
+.participation-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: .85rem;
+  font-weight: 800;
+}
+
+.participation-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.participation-legend i {
+  width: .8rem;
+  height: .8rem;
+  border-radius: .2rem;
+}
+
+.participation-bars {
+  display: grid;
+  gap: .6rem;
+}
+
+.participation-bar-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 240px) minmax(220px, 1fr) 5.5rem;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.participation-bar-row > strong {
+  overflow: hidden;
+  color: var(--color-primary-dark);
+  font-size: .9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.participation-bar-row > span {
+  color: var(--color-primary-dark);
+  font-size: .86rem;
+  font-weight: 900;
+  text-align: right;
+}
+
+.participation-stack {
+  min-height: 1.1rem;
+}
+
+.participation-stack i {
+  display: block;
+  min-width: 0;
+}
+
+.participation-stack .direct,
+.participation-legend .direct { background: #087ec2; }
+
+.participation-stack .kahoot,
+.participation-legend .kahoot { background: #f0a202; }
+
+.participation-stack .engagement,
+.participation-legend .engagement { background: #2f855a; }
+
+@media (max-width: 820px) {
+  .participation-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .participation-bar-row { grid-template-columns: minmax(110px, 1fr) 2fr 4.8rem; }
+}
+
+@media (max-width: 560px) {
+  .participation-summary { grid-template-columns: 1fr; }
+  .participation-bar-row { grid-template-columns: 1fr auto; }
+  .participation-stack { grid-column: 1 / -1; grid-row: 2; }
+}
+
 .kahoot-preview {
   margin-top: var(--space-md);
 }
